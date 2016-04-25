@@ -2,18 +2,34 @@
  // Farbcode Hellblau: #75bbf7
  // Farbcode Grau: #cccccc
  // Farbcode Pfeile: #75bbf7
-var buttons = require('sdk/ui/button/action');
+var { ActionButton } = require("sdk/ui/button/action");
 var tabs = require("sdk/tabs");
-var button = buttons.ActionButton({
-    id: "mmy-button",
-    label: "my-button",
+
+var button = ActionButton({
+    id: "my-button",
+    label: "my button",
     icon: {
-      "16": "./logo-16.png"
+      "16": "./icon-16.png",
+      "32": "./icon-32.png",
+      "64": "./icon-64.png"
     },
     onClick: newTab
   });
 function newTab(state){
-var contentScriptString = "var div = document.createElement('div'); div.style.width = '100%'; div.style.height = '150px'; div.style.background = '#313192'; div.style.color = 'white'; div.innerHTML = 'Hello'; document.body.insertBefore(div,document.body.firstChild);";
+  var contentScriptString = "var div = document.createElement('div');"+
+  "div.style.width = '100%';"+
+  "div.style.height = '150px';"+
+  "div.style.background = '#313192';"+
+  "div.style.color = 'white';"+
+  "div.innerHTML = '<form><label for=\"video\"> <input type=\"checkbox\" checked=\"checked\" name=\"video\" value=\"video\""+
+  " id=\"video\" /> Video</label><label for=\"forum\"> <input type=\"checkbox\" checked=\"checked\" name=\"forum\" value=\"forum\""+
+  " id=\"forum\" /> Forum</label><img src=\"data/icon-32.png\" alt=\"Help\" style=\"width:20px;height:20px;\" align=right>"+
+  "<img src=\"data/icon-32.png\" alt=\"Close\" style=\"width:20px;height:20px;\" align=right></form><div style=\"margin: 0 auto;"+
+  " left: 10px; top: 50px; width: 98%; height: 50%; align: middle; background-color:#75bbf7; visibility: visible\">"+
+  "<div style=\"visibility: visible\"><p>LLIs Video</p></div><div style=\"visibility: hidden\"><p>LLIs Forum</p>"+
+  "</div></div><ul id=\"tabs\"><li><a href=\"#video\">Video</a></li><li><a href=\"#forum\">Forum</a></li></ul>';"+
+  "document.body.insertBefore(div,document.body.firstChild);";
+
 tabs.activeTab.attach({
   contentScript: contentScriptString
 });
