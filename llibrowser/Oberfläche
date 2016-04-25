@@ -1,0 +1,20 @@
+ // Fabrcode Dunkelblau: #313192
+ // Farbcode Hellblau: #75bbf7
+ // Farbcode Grau: #cccccc
+ // Farbcode Pfeile: #75bbf7
+var buttons = require('sdk/ui/button/action');
+var tabs = require("sdk/tabs");
+var button = buttons.ActionButton({
+    id: "mmy-button",
+    label: "my-button",
+    icon: {
+      "16": "./logo-16.png"
+    },
+    onClick: newTab
+  });
+function newTab(state){
+var contentScriptString = "var div = document.createElement('div'); div.style.width = '100%'; div.style.height = '150px'; div.style.background = '#313192'; div.style.color = 'white'; div.innerHTML = 'Hello'; document.body.insertBefore(div,document.body.firstChild);";
+tabs.activeTab.attach({
+  contentScript: contentScriptString
+});
+}
