@@ -1,1 +1,0 @@
-alert("Plug-In LLIBrowser is running");

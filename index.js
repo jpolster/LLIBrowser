@@ -2,8 +2,6 @@ var { ActionButton } = require("sdk/ui/button/action");
 var tabs = require("sdk/tabs");
 var data = require("sdk/self").data; 
 
-var isCalled=false;
-
 var button = ActionButton({
     id: "my-button",
     label: "my button",
@@ -15,21 +13,9 @@ var button = ActionButton({
     onClick: newTab
   });
 
-function newTab(state){
-if (isCalled)
-{
-	var pluginRunning="alert(\"Plug-In LLIBrowser is running\");";
-	tabs.activeTab.attach({
-  		contentScript: pluginRunning
-	});
-}
+function newTab(state){ 
+  tabs.activeTab.attach({
+      contentScriptFile: data.url("contentscript.js")
+  });
 
-else
-{
-	isCalled=true;     
-	
-	tabs.activeTab.attach({
-  		contentScriptFile: data.url("contentscript.js")
-	});
-}
 }
