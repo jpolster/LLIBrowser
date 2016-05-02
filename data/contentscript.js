@@ -1,8 +1,14 @@
+var script = document.createElement('script');
+script.src = 'http://code.jquery.com/jquery-1.11.0.min.js';
+script.type = 'text/javascript';
+document.getElementsByTagName('head')[0].appendChild(script);
+
 var div = document.createElement('div');
 div.style.width = '100%';
 div.style.height = '150px';
 div.style.background = '#313192';
 div.style.color = 'white';
+div.id = "main";
 div.innerHTML="<script type=\"text/javascript\" src=\"angular.min.js\"></script>"+
               "<script type=\"text/javascript\" src=\"app.js\"></script>"+
               "<form>"+
