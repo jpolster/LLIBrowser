@@ -17,8 +17,7 @@ else
         "<label for=\"video\" style=\"color: white\"> <input type=\"checkbox\" checked=\"checked\" name=\"video\" value=\"video\" id=\"video\" /> Video</label>"+
         "<label for=\"forum\" style=\"color: white\"> <input type=\"checkbox\" checked=\"checked\" name=\"forum\" value=\"forum\" id=\"forum\" /> Forum</label>"+
         "<img src="+self.options.closeImg+" alt=\"Help\" style=\"width:20px;height:20px;\" align=right>"+
-        "<img src="+self.options.helpImg+" alt=\"Close\" style=\"width:20px;height:20px;\" align=right onclick="+
-          +"alert('LLIBrowser\nAuthors: Johanna Lubian, Janine Polster, Pavlo Shevchenko\nCreated: SoSe16\nHomepage: www.example.com')\">"+
+        "<img src="+self.options.helpImg+" alt=\"Close\" style=\"width:20px;height:20px;\" align=right onclick=\"alert('LLIBrowser')\">"+
       "</form>"+
       "<div style=\"margin: 0 auto; left: 10px; top: 50px; width: 98%; height: 50%; align: middle; background-color:#75bbf7; visibility: visible\">"+
         "<div ng-show=\"tab == 1\">"+
