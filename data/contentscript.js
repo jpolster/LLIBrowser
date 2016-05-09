@@ -1,4 +1,3 @@
-
 var allDivs = document.getElementsByTagName('div');
 if (allDivs.mainplugindiv)
 {
@@ -12,13 +11,13 @@ else
     div.style.height = '150px';
     div.style.background = '#313192';
     div.style.color = 'white';
-    div.innerHTML="<script type=\"text/javascript\" src=\"angular.min.js\"></script>"+
-    "<script type=\"text/javascript\" src=\"app.js\"></script>"+
-      "<form>"+
+    div.innerHTML="<script type=\"text/javascript\" src="+self.options.angularLib+"></script>"+
+    "<script type=\"text/javascript\" src="+self.options.angularApp+"></script>"+
+      "<form style=\"margin: 0 auto; left: 10px; top: 50px; width: 98%;align: middle; visibility: visible\">"+
         "<label for=\"video\" style=\"color: white\"> <input type=\"checkbox\" checked=\"checked\" name=\"video\" value=\"video\" id=\"video\" /> Video</label>"+
         "<label for=\"forum\" style=\"color: white\"> <input type=\"checkbox\" checked=\"checked\" name=\"forum\" value=\"forum\" id=\"forum\" /> Forum</label>"+
-        "<img src=\"data/icon-32.png\" alt=\"Help\" style=\"width:20px;height:20px;\" align=right>"+
-        "<img src=\"data/icon-32.png\" alt=\"Close\" style=\"width:20px;height:20px;\" align=right>"+
+        "<img src="+self.options.closeImg+" alt=\"Help\" style=\"width:20px;height:20px;\" align=right>"+
+        "<img src="+self.options.helpImg+" alt=\"Close\" style=\"width:20px;height:20px;\" align=right onclick=\"alert('Hello')\">"+
       "</form>"+
       "<div style=\"margin: 0 auto; left: 10px; top: 50px; width: 98%; height: 50%; align: middle; background-color:#75bbf7; visibility: visible\">"+
         "<div ng-show=\"tab == 1\">"+
