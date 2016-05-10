@@ -1,4 +1,6 @@
 var allDivs = document.getElementsByTagName('div');
+var headTag = document.getElementsByTagName('head')[0];
+
 if (allDivs.mainplugindiv)
 {
   alert("!!! Plugin LLIBrowser is running !!!");
@@ -7,6 +9,8 @@ else
 {
   var div = document.createElement('div');
   div.id='mainplugindiv';
+  div.style.position = 'absolute';
+  div.style.zIndex = '100';
   div.style.width = '100%';
   div.style.height = '150px';
   div.style.background = '#313192';
@@ -35,5 +39,6 @@ else
       "<a href=\"#video\" style=\"color: white; background-color: #75bbf7; height: 15px; padding: 5 auto\" ng-click=\"tab = 1\">Video</a>"+
       "<a href=\"#forum\" style=\"color: white; background-color: #313192; height: 15px; padding: 5 auto\" ng-click=\"tab = 2\">Forum</a>"+
       "</form>";
-  document.body.insertBefore(div,document.body.firstChild);
+  //document.body.insertBefore(div,document.body.firstChild);
+  headTag.parentNode.insertBefore(div, headTag);
 }
