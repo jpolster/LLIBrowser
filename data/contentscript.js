@@ -15,13 +15,14 @@ else
   div.style.height = '150px';
   div.style.background = '#313192';
   div.style.color = 'white';
+  div.role = 'banner';
   div.innerHTML="<script type=\"text/javascript\" src="+self.options.angularLib+"></script>"+
     "<script type=\"text/javascript\" src="+self.options.angularApp+"></script>"+
       "<form style=\"margin: 0 auto; left: 10px; top: 50px; width: 98%;align: middle; visibility: visible\">"+
         "<label for=\"video\" style=\"color: white\"> <input type=\"checkbox\" checked=\"checked\" name=\"video\" value=\"video\" id=\"video\" /> Video</label>"+
         "<label for=\"forum\" style=\"color: white\"> <input type=\"checkbox\" checked=\"checked\" name=\"forum\" value=\"forum\" id=\"forum\" /> Forum</label>"+
-        "<img src="+self.options.closeImg+" alt=\"Help\" style=\"width:15px;height:15px; position:absolute; right:25px; top:17\" align=right onclick=\"var youSure=confirm('Are you sure you want to close the plugin?'); if (youSure){var element = document.getElementById('mainplugindiv');element.outerHTML = '';delete element;}\">"+
-        "<img src="+self.options.helpImg+" alt=\"Close\" style=\"width:15px;height:15px; position:absolute; right:50px; top:17px;\" align=right onclick=\"alert('LLIBrowser')\">"+
+        "<img src="+self.options.closeImg+" alt=\"Help\" style=\"width:15px;height:15px; position:relative; right:25px; top:17px;\" align=right onclick=\"var youSure=confirm('Are you sure you want to close the plugin?'); if (youSure){var element = document.getElementById('mainplugindiv');element.outerHTML = '';delete element;}\">"+
+        "<img src="+self.options.helpImg+" alt=\"Close\" style=\"width:15px;height:15px; position:relative; right:50px; top:17px;\" align=right onclick=\"alert('LLIBrowser')\">"+
       "</form>"+
       "<div style=\"margin: 0 auto; left: 10px; top: 50px; width: 98%; height: 50%; align: middle; background-color:#75bbf7; visibility: visible\">"+
         "<div ng-show=\"tab == 1\">"+
