@@ -16,7 +16,9 @@ else
   div.style.background = '#313192';
   div.style.color = 'white';
   div.role = 'banner';
-  div.innerHTML="<script type=\"text/javascript\" src="+self.options.angularLib+"></script>"+
+
+
+  /*div.innerHTML="<script type=\"text/javascript\" src="+self.options.angularLib+"></script>"+
     "<script type=\"text/javascript\" src="+self.options.angularApp+"></script>"+
       "<form style=\"margin: 0 auto; left: 10px; top: 50px; width: 98%;align: middle; visibility: visible\">"+
         "<label for=\"video\" style=\"color: white\"> <input type=\"checkbox\" checked=\"checked\" name=\"video\" value=\"video\" id=\"video\" /> Video</label>"+
@@ -37,8 +39,14 @@ else
         "</div>"+
       "</div>"+
       "<form style=\"margin: 0 auto; left: 10px; top: 50px; width: 98%;align: middle; background-color:#313192; visibility: visible\">"+
-      "<a href=\"#video\" style=\"color: white; background-color: #75bbf7; height: 15px; padding: 5 auto\" ng-click=\"tab = 1\">Video</a>"+
-      "<a href=\"#forum\" style=\"color: white; background-color: #313192; height: 15px; padding: 5 auto\" ng-click=\"tab = 2\">Forum</a>"+
-      "</form>";
+      "<a href=\"#video\" style=\"color: white; background-color: #75bbf7; height: 15px; padding: 5px auto\" ng-click=\"tab = 1\">Video</a>"+
+      "<a href=\"#forum\" style=\"color: white; background-color: #313192; height: 15px; padding: 5px auto\" ng-click=\"tab = 2\">Forum</a>"+
+      "</form>";*/
+      
+      
+  
+  
+  
   document.body.insertBefore(div,document.body.firstChild);
+ $("#mainplugindiv").html(self.options.divContent);
 }

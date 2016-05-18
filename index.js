@@ -13,8 +13,9 @@ var button = ActionButton({
 
 function newTab(state){	
 	tabs.activeTab.attach({
-  		contentScriptFile: data.url("contentscript.js"),
+  		contentScriptFile: [data.url("jquery.min.js"), data.url("contentscript.js")],
   		contentScriptOptions: {
+  			divContent: data.load("test.html"),
   			closeImg: data.url("close-16.png"),
   			helpImg: data.url("help-16.png"),
   			angularLib: data.url("angular.min.js"),
