@@ -1,4 +1,4 @@
-<div ng-app="lliapp" style="position:relative; clear:both; zIndex:100; width:100%; height:150px; background-color:#313192; color:white">
+<div ng-app="lliapp" ng-controller="MainCtrl" style="position:relative; clear:both; zIndex:100; width:100%; height:150px; background-color:#313192; color:white">
 
   <script type="text/javascript" src="resource://LLIBrowser/data/angular.min.js"></script>
   <script type="text/javascript" src="resource://LLIBrowser/data/app.js"></script>
@@ -13,12 +13,15 @@
   <div style="margin: 0 auto; left: 10px; top: 50px; width: 98%; height: 50%; align: middle; background-color:#75bbf7; visibility: visible">
     <div ng-show="tab == 1">
       <form>
-        <h3 style="color: white; align: center">Video1 Video2 Video3 Video4</h3>
+        <div style="float: left; margin-top:10px; margin-left:3.5%; width:17%; height: 70%; background-color:white; color:black">LLI1</div>
+        <div style="float: left; margin-top:10px; margin-left:2%; width:17%; height: 70%; background-color:white; color:black">LLI2</div>
+        <div style="float: left; margin-top:10px; margin-left:2%; width:17%; height: 70%; background-color:white; color:black">LLI3</div>
+        <div style="float: left; margin-top:10px; margin-left:2%; width:17%; height: 70%; background-color:white; color:black">LLI4</div>
+        <div style="float: left; margin-top:10px; margin-left:2%; margin-right:3.5%; width:17%; height: 70%; background-color:white; color:black">LLI5</div>
       </form>
     </div>
     <div ng-show="tab == 2">
       <form>
-        <h3 style="color: white; align: center">Forum1 Forum2 Forum3 Forum4</h3>
       </form>
     </div>
   </div>
