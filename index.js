@@ -8,14 +8,14 @@ var button = ActionButton({
     icon: {
       "16": "./logo-16.png"
     },
-    onClick: newTab
+    onClick: showPlugIn
   });
 
-function newTab(state){	
+function showPlugIn(state){	
 	tabs.activeTab.attach({
   		contentScriptFile: [data.url("jquery.min.js"), data.url("contentscript.js")],
   		contentScriptOptions: {
-  			divContent: data.load("test.html"),
+  			divContent: data.load("overlay.html"),
   			closeImg: data.url("close-16.png"),
   			helpImg: data.url("help-16.png"),
   			angularLib: data.url("angular.min.js"),

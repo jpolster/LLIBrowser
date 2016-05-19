@@ -1,3 +1,3 @@
 (function(){
-	var app=angular.module('test',[]);	
+	var app=angular.module('lliapp',[]);	
 })();
