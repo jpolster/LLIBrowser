@@ -1,7 +1,4 @@
-<div ng-app="lliapp" ng-controller="MainCtrl" style="position:relative; clear:both; zIndex:100; width:100%; height:150px; background-color:#313192; color:white">
-
-  <script type="text/javascript" src="resource://LLIBrowser/data/angular.min.js"></script>
-  <script type="text/javascript" src="resource://LLIBrowser/data/app.js"></script>
+<div ng-app="store" style="position:relative; clear:both; zIndex:100; width:100%; height:150px; background-color:#313192; color:white">
 
   <form style="margin: 0 auto; left: 10px; top: 50px; width: 98%;align: middle; visibility: visible">
     <label for="video" style="color: white"> <input type="checkbox" checked="checked" name="video" value="video" id="video" /> Video</label>
@@ -11,8 +8,8 @@
   </form>
 
   <div style="margin: 0 auto; left: 10px; top: 50px; width: 98%; height: 50%; align: middle; background-color:#75bbf7; visibility: visible">
-    <div ng-show="tab == 1">
-      <form>
+    <div>
+      <form ng-show="tab==1">
         <div style="float: left; margin-top:10px; margin-left:3.5%; width:17%; height: 70%; background-color:white; color:black">LLI1</div>
         <div style="float: left; margin-top:10px; margin-left:2%; width:17%; height: 70%; background-color:white; color:black">LLI2</div>
         <div style="float: left; margin-top:10px; margin-left:2%; width:17%; height: 70%; background-color:white; color:black">LLI3</div>
@@ -20,14 +17,15 @@
         <div style="float: left; margin-top:10px; margin-left:2%; margin-right:3.5%; width:17%; height: 70%; background-color:white; color:black">LLI5</div>
       </form>
     </div>
-    <div ng-show="tab == 2">
-      <form>
+    <div>
+      <form ng-show="tab==2">
+      <!Copy from other tab>
       </form>
     </div>
   </div>
 
   <form style="margin: 0 auto; left: 10px; top: 50px; width: 98%;align: middle; background-color:#313192; visibility: visible">
-    <a href="#video" style="color: white; background-color: #75bbf7; height: 15px; padding: 5px auto" ng-click="tab = 1">Video</a>
-    <a href="#forum" style="color: white; background-color: #313192; height: 15px; padding: 5px auto" ng-click="tab = 2">Forum</a>
+    <a href="#video" style="color: white; background-color: #75bbf7; height: 15px; padding: 5px auto" ng-click="tab=1">Video</a>
+    <a href="#forum" style="color: white; background-color: #313192; height: 15px; padding: 5px auto" ng-click="tab=2">Forum</a>
   </form>
 </div>
