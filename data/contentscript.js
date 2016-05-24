@@ -13,11 +13,11 @@ else
   var appScript=document.createElement('script');
   appScript.type='text/javascript';
   appScript.src=self.options.angularApp;
-
+  
   var head=document.getElementsByTagName('head')[0];
   head.appendChild(angularScript);
   head.appendChild(appScript);
- 
+  
   var div = document.createElement('div');
   div.id='mainplugindiv';
 

@@ -1,0 +1,25 @@
+{
+  "name": "llibrowser",
+  "description": "A basic add-on",
+  "main": "index.js",
+  "authors": [
+    "J. Lubian",
+    "J. Polster",
+    "P. Shevchenko"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "jetpack"
+  ],
+  "homepage": "https://github.com/jpolster/LLIBrowser",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.5.5"
+  }
+}

@@ -16,7 +16,7 @@ function showPlugIn(state){
   		contentScriptFile: [data.url("jquery.min.js"), data.url("contentscript.js")],
   		contentScriptOptions: {
   			divContent: data.load("overlay.html"),
-  			angularLib: data.url("angular.min.js"),
+  			angularLib: data.url("angular/angular.min.js"),
   			angularApp: data.url("app.js")
   		}
 	});
