@@ -13,7 +13,8 @@ var button = ActionButton({
 
 function showPlugIn(state){	
   let currUrl = tabs.activeTab.url;
-  var file = "file:///home/janine/OneDrive/Uni/OvGU/4.%20Semester/SoftwareProjekt/LLIBrowser/data/overlay.html";
+  var file = "file:///home/janine/OneDrive/Uni/OvGU/4.%20Semester/SoftwareProjekt/LLIBrowser/overlay.html";
+  //var file = "file:///home/janine/Schreibtisch/angularTut/index.html";
   var completePath = file.concat("?").concat(currUrl);
 
   tabs.open(completePath)
