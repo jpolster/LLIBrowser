@@ -12,13 +12,9 @@ var button = ActionButton({
   });
 
 function showPlugIn(state){	
-	tabs.activeTab.attach({
-  		contentScriptFile: [data.url("jquery.min.js"), data.url("contentscript.js")],
-  		contentScriptOptions: {
-  			divContent: data.load("overlay.html"),
-  			angularLib: data.url("angular/angular.min.js"),
-  			angularApp: data.url("app.js")
-  		}
-	});
+  let currUrl = tabs.activeTab.url;
+  var file = "file:///home/janine/OneDrive/Uni/OvGU/4.%20Semester/SoftwareProjekt/LLIBrowser/data/overlay.html";
+  var completePath = file.concat("?").concat(currUrl);
 
+  tabs.open(completePath)
 }

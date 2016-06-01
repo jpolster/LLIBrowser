@@ -1,43 +1,17 @@
-<div ng-app="store" style="position:relative; clear:both; zIndex:100; width:100%; height:150px; background-color:#313192; color:white">
+<!doctype html>
+<html lang="de" ng-app = "llibrowser">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css">
+    <script type="text/javascript" src="resource://LLIBrowser/data/angular.min.js"></script>
+    <script type="text/javascript" src="resource://LLIBrowser/data/app.js"></script>
+    <title>Learn Efficiently!!!</title>
+  </head>
+  <body ng-controller="mainController as main">
+    <!-- Sichtbarer Dokumentinhalt im body -->
+    Iam {{4+5}}
 
-  <form style="margin: 0 auto; left: 10px; top: 50px; width: 98%;align: middle; visibility: visible">
-    <label for="FAQ" style="color: white"> <input type="checkbox" checked="checked" name="FAQ" value="FAQ" id="FAQ" /> FAQ</label>
-    <label for="code" style="color: white"> <input type="checkbox" checked="checked" name="code" value="code" id="code" />Code</label>
-    <label for="video" style="color: white"> <input type="checkbox" checked="checked" name="video" value="video" id="video" /> Video</label>
-    <label for="audio" style="color: white"> <input type="checkbox" checked="checked" name="audio" value="audio" id="audio" /> Audio </label>
-    <label for="image" style="color: white"> <input type="checkbox" checked="checked" name="image" value="image" id="image" /> Video </label>
-    <label for="slides" style="color: white"> <input type="checkbox" checked="checked" name="slides" value="slides" id="slides" /> Slides </label>
-    <label for="table" style="color: white"> <input type="checkbox" checked="checked" name="table" value="table" id="table" /> Table </label>
-    <label for="narrativtext" style="color: white"> <input type="checkbox" checked="checked" name="narrativtext" value="narrativtext" id="narrativtext" /> narrativ Text </label>
-    <img src="resource://LLIBrowser/data/images/close-16.png" alt="c" style="width:15px;height:15px; position:relative; right:25px; top:17px;" align=right onclick="var youSure=confirm('Are you sure you want to close the plugin?'); if (youSure){var element = document.getElementById('mainplugindiv');element.outerHTML = '';delete element;}">
-    <img src="resource://LLIBrowser/data/images/help-16.png" alt="h" style="width:15px;height:15px; position:relative; right:50px; top:17px;" align=right onclick="alert('LLIBrowser')">
-  </form>
-
-  <div style="margin: 0 auto; left: 10px; top: 50px; width: 98%; height: 50%; align: middle; background-color:#75bbf7; visibility: visible">
-    <div>
-      <form ng-show="tab==1">
-        <div style="float: left; margin-top:10px; margin-left:3.5%; width:17%; height: 70%; background-color:white; color:black">LLI1</div>
-        <div style="float: left; margin-top:10px; margin-left:2%; width:17%; height: 70%; background-color:white; color:black">LLI2</div>
-        <div style="float: left; margin-top:10px; margin-left:2%; width:17%; height: 70%; background-color:white; color:black">LLI3</div>
-        <div style="float: left; margin-top:10px; margin-left:2%; width:17%; height: 70%; background-color:white; color:black">LLI4</div>
-        <div style="float: left; margin-top:10px; margin-left:2%; margin-right:3.5%; width:17%; height: 70%; background-color:white; color:black">LLI5</div>
-      </form>
-    </div>
-    <div>
-      <form ng-show="tab==2">
-      <!--Copy from other tab-->
-      </form>
-    </div>
-  </div>
-
-  <form style="margin: 0 auto; left: 10px; top: 50px; width: 98%;align: middle; background-color:#313192; visibility: visible">
-    <a href="#video" style="color: white; background-color: #75bbf7; height: 15px; padding: 5px auto" ng-click="tab = 1">Video</a>
-    <a href="#forum" style="color: white; background-color: #313192; height: 15px; padding: 5px auto" ng-click="tab = 2">Forum</a>
-    <a href="#FAQ" style="color: white; background-color: #313192; height: 15px; padding: 5px auto" ng-click="tab = 3">FAQ</a>
-    <a href="#code" style="color: white; background-color: #313192; height: 15px; padding: 5px auto" ng-click="tab = 4">Code</a>
-    <a href="#audio" style="color: white; background-color: #313192; height: 15px; padding: 5px auto" ng-click="tab = 5">Audio</a>
-    <a href="#image" style="color: white; background-color: #313192; height: 15px; padding: 5px auto" ng-click="tab = 6">Image</a>
-    <a href="#slides" style="color: white; background-color: #313192; height: 15px; padding: 5px auto" ng-click="tab = 7">Slides</a>
-    <a href="#narrativeText" style="color: white; background-color: #313192; height: 15px; padding: 5px auto" ng-click="tab = 8">narrativ Text</a>
-  </form>
-</div>
+    <h1>dieser Text ist für Testzwecke</h1>
+  </body>
+</html>
