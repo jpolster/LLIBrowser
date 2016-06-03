@@ -4,11 +4,11 @@
   <link rel="stylesheet" type="text/css" href="bootstrap.min.css"/>
 </head>
 <body>
+
   <script type="text/javascript" src="angular.min.js"></script>
   <script type="text/javascript" src="app.js"></script>
    <p id="url"></p>
   <script type="text/javascript">
-  var encoded = "";
   function extractUrl()
   {
     var parameters = location.search.substring(1).split("&");
@@ -16,13 +16,13 @@
     var temp = parameters[0].split("=");
     var url = unescape(temp[1]);
 
-    encoded = encodeURIComponent(url);
+    var encoded = encodeURIComponent(url);
 
     document.getElementById("url").innerHTML = encoded;
   }
   extractUrl();
 </script>
 
- <h1>I am {{20 + 8}} years old</h1> 
+ <h1>I am {{20 + 7}} years old</h1> 
 </body>
 </html>
