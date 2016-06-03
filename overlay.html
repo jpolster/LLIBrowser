@@ -6,23 +6,102 @@
 <body>
   <script type="text/javascript" src="angular.min.js"></script>
   <script type="text/javascript" src="app.js"></script>
-   <p id="url"></p>
-  <script type="text/javascript">
-  var encoded = "";
-  function extractUrl()
-  {
-    var parameters = location.search.substring(1).split("&");
+  
+  <form name="newPage" ng-controller="newPageCtrl as newlink" ng-submit="newPage.$valid && newlink.setURL()" novalidate style="position:relative; clear:both; zIndex:100; width:100%; background-color:#313192; color:black">
+    <input ng-model="newlink.newURL" type="url" placeholder="Insert new link for LLIs" required style="width:90%"/>
+    <input type="submit" value="Reload"/>
+    <p style="color: white">Active link: {{newlink.oldURL}}</p>
+    <p style="color: white">Future link: {{newlink.newURL}}</p>
+  </form>
 
-    var temp = parameters[0].split("=");
-    var url = unescape(temp[1]);
+ <div style="position:relative; clear:both; zIndex:100; width:100%; height:150px; background-color:#313192; color:white" ng-controller="TabCtrl as tab">
+  
+  <form style="margin: 0 auto; left: 10px; top: 50px; width: 98%;align: middle; visibility: visible">
+    <label for="FAQ" style="color: white"> <input type="checkbox" checked="checked" name="FAQ" value="FAQ" id="FAQ" ng-model="tab.activeTabs[0]"/> FAQ</label>
+    <label for="code" style="color: white"> <input type="checkbox" checked="checked" name="code" value="code" id="code" ng-model="tab.activeTabs[1]" />Code</label>
+    <label for="video" style="color: white"> <input type="checkbox" checked="checked" name="video" value="video" id="video" ng-model="tab.activeTabs[2]" /> Video</label>
+    <label for="audio" style="color: white"> <input type="checkbox" checked="checked" name="audio" value="audio" id="audio" ng-model="tab.activeTabs[3]"/> Audio </label>
+    <label for="slides" style="color: white"> <input type="checkbox" checked="checked" name="slides" value="slides" id="slides" ng-model="tab.activeTabs[4]"/> Slides </label>
+    <label for="table" style="color: white"> <input type="checkbox" checked="checked" name="table" value="table" id="table" ng-model="tab.activeTabs[5]"/> Table </label>
+    <label for="narrativtext" style="color: white"> <input type="checkbox" checked="checked" name="narrativtext" value="narrativtext" id="narrativtext" ng-model="tab.activeTabs[6]"/> narrativ Text </label>
+  </form>
 
-    encoded = encodeURIComponent(url);
+  <div style="margin: 0 auto; left: 10px; top: 50px; width: 98%; height: 50%; align: middle; background-color:#75bbf7; visibility: visible">
+    <div id="FAQTab">
+      <form ng-show="tab.isSelected(1) && tab.activeTabs[0]">
+        <div style="float: left; margin-top:10px; margin-left:3.5%; width:17%; height: 70%; background-color:white; color:black">LLI1</div>
+        <div style="float: left; margin-top:10px; margin-left:2%; width:17%; height: 70%; background-color:white; color:black">LLI2</div>
+        <div style="float: left; margin-top:10px; margin-left:2%; width:17%; height: 70%; background-color:white; color:black">LLI3</div>
+        <div style="float: left; margin-top:10px; margin-left:2%; width:17%; height: 70%; background-color:white; color:black">LLI4</div>
+        <div style="float: left; margin-top:10px; margin-left:2%; margin-right:3.5%; width:17%; height: 70%; background-color:white; color:black">LLI5</div>
+      </form>
+    </div>
+     <div id="CodeTab">
+      <form ng-show="tab.isSelected(2) && tab.activeTabs[1]">
+        <div style="float: left; margin-top:10px; margin-left:3.5%; width:17%; height: 70%; background-color:white; color:black">LLI1</div>
+        <div style="float: left; margin-top:10px; margin-left:2%; width:17%; height: 70%; background-color:white; color:black">LLI2</div>
+        <div style="float: left; margin-top:10px; margin-left:2%; width:17%; height: 70%; background-color:white; color:black">LLI3</div>
+        <div style="float: left; margin-top:10px; margin-left:2%; width:17%; height: 70%; background-color:white; color:black">LLI4</div>
+        <div style="float: left; margin-top:10px; margin-left:2%; margin-right:3.5%; width:17%; height: 70%; background-color:white; color:black">LLI5</div>
+      </form>
+    </div>
+    <div id="VideoTab">
+      <form ng-show="tab.isSelected(3) && tab.activeTabs[2]">
+        <div style="float: left; margin-top:10px; margin-left:3.5%; width:17%; height: 70%; background-color:white; color:black">LLI1</div>
+        <div style="float: left; margin-top:10px; margin-left:2%; width:17%; height: 70%; background-color:white; color:black">LLI2</div>
+        <div style="float: left; margin-top:10px; margin-left:2%; width:17%; height: 70%; background-color:white; color:black">LLI3</div>
+        <div style="float: left; margin-top:10px; margin-left:2%; width:17%; height: 70%; background-color:white; color:black">LLI4</div>
+        <div style="float: left; margin-top:10px; margin-left:2%; margin-right:3.5%; width:17%; height: 70%; background-color:white; color:black">LLI5</div>
+      </form>
+    </div>
+    <div id="AudioTab">
+      <form ng-show="tab.isSelected(4) && tab.activeTabs[3]">
+        <div style="float: left; margin-top:10px; margin-left:3.5%; width:17%; height: 70%; background-color:white; color:black">LLI1</div>
+        <div style="float: left; margin-top:10px; margin-left:2%; width:17%; height: 70%; background-color:white; color:black">LLI2</div>
+        <div style="float: left; margin-top:10px; margin-left:2%; width:17%; height: 70%; background-color:white; color:black">LLI3</div>
+        <div style="float: left; margin-top:10px; margin-left:2%; width:17%; height: 70%; background-color:white; color:black">LLI4</div>
+        <div style="float: left; margin-top:10px; margin-left:2%; margin-right:3.5%; width:17%; height: 70%; background-color:white; color:black">LLI5</div>
+      </form>
+    </div>
+    <div id="SlidesTab">
+      <form ng-show="tab.isSelected(5) && tab.activeTabs[4]">
+        <div style="float: left; margin-top:10px; margin-left:3.5%; width:17%; height: 70%; background-color:white; color:black">LLI1</div>
+        <div style="float: left; margin-top:10px; margin-left:2%; width:17%; height: 70%; background-color:white; color:black">LLI2</div>
+        <div style="float: left; margin-top:10px; margin-left:2%; width:17%; height: 70%; background-color:white; color:black">LLI3</div>
+        <div style="float: left; margin-top:10px; margin-left:2%; width:17%; height: 70%; background-color:white; color:black">LLI4</div>
+        <div style="float: left; margin-top:10px; margin-left:2%; margin-right:3.5%; width:17%; height: 70%; background-color:white; color:black">LLI5</div>
+      </form>
+    </div>
+    <div id="TableTab">
+      <form ng-show="tab.isSelected(6) && tab.activeTabs[5]">
+        <div style="float: left; margin-top:10px; margin-left:3.5%; width:17%; height: 70%; background-color:white; color:black">LLI1</div>
+        <div style="float: left; margin-top:10px; margin-left:2%; width:17%; height: 70%; background-color:white; color:black">LLI2</div>
+        <div style="float: left; margin-top:10px; margin-left:2%; width:17%; height: 70%; background-color:white; color:black">LLI3</div>
+        <div style="float: left; margin-top:10px; margin-left:2%; width:17%; height: 70%; background-color:white; color:black">LLI4</div>
+        <div style="float: left; margin-top:10px; margin-left:2%; margin-right:3.5%; width:17%; height: 70%; background-color:white; color:black">LLI5</div>
+      </form>
+    </div>
+    <div id="TextTab">
+      <form ng-show="tab.isSelected(7) && tab.activeTabs[6]">
+        <div style="float: left; margin-top:10px; margin-left:3.5%; width:17%; height: 70%; background-color:white; color:black">LLI1</div>
+        <div style="float: left; margin-top:10px; margin-left:2%; width:17%; height: 70%; background-color:white; color:black">LLI2</div>
+        <div style="float: left; margin-top:10px; margin-left:2%; width:17%; height: 70%; background-color:white; color:black">LLI3</div>
+        <div style="float: left; margin-top:10px; margin-left:2%; width:17%; height: 70%; background-color:white; color:black">LLI4</div>
+        <div style="float: left; margin-top:10px; margin-left:2%; margin-right:3.5%; width:17%; height: 70%; background-color:white; color:black">LLI5</div>
+      </form>
+    </div>
+  </div>
 
-    document.getElementById("url").innerHTML = encoded;
-  }
-  extractUrl();
-</script>
+  <form style="margin: 0 auto; left: 10px; top: 50px; width: 98%;align: middle; background-color:#313192; visibility: visible">
+    <a href="#video" style="color: white; background-color: #75bbf7; height: 15px; padding: 5px auto" ng-style="tab.tabStyle[0]" ng-click="tab.selectTab(1);" ng-show="tab.activeTabs[0]">FAQ</a>
+    <a href="#forum" style="color: white; background-color: #313192; height: 15px; padding: 5px auto" ng-style="tab.tabStyle[1]" ng-click="tab.selectTab(2);" ng-show="tab.activeTabs[1]">Code</a>
+    <a href="#FAQ" style="color: white; background-color: #313192; height: 15px; padding: 5px auto" ng-style="tab.tabStyle[2]" ng-click="tab.selectTab(3);" ng-show="tab.activeTabs[2]">Video</a>
+    <a href="#code" style="color: white; background-color: #313192; height: 15px; padding: 5px auto" ng-style="tab.tabStyle[3]" ng-click="tab.selectTab(4);" ng-show="tab.activeTabs[3]">Audio</a>
+    <a href="#audio" style="color: white; background-color: #313192; height: 15px; padding: 5px auto" ng-style="tab.tabStyle[4]" ng-click="tab.selectTab(5);"ng-show="tab.activeTabs[4]">Slides</a>
+    <a href="#image" style="color: white; background-color: #313192; height: 15px; padding: 5px auto" ng-style="tab.tabStyle[5]" ng-click="tab.selectTab(6);" ng-show="tab.activeTabs[5]">Table</a>
+    <a href="#narrativeText" style="color: white; background-color: #313192; height: 15px; padding: 5px auto" ng-style="tab.tabStyle[6]" ng-click="tab.selectTab(7);" ng-show="tab.activeTabs[6]">narrativ Text</a>
+  </form>
+</div>
 
- <h1>I am {{20 + 8}} years old</h1> 
 </body>
 </html>
