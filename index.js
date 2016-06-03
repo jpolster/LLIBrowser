@@ -13,8 +13,8 @@ var button = ActionButton({
 
 function showPlugIn(state){	
   let currUrl = tabs.activeTab.url;
-  //var file = "file:///home/janine/OneDrive/Uni/OvGU/4.%20Semester/SoftwareProjekt/LLIBrowser/overlay.html";
-  var file = "http://www-e.uni-magdeburg.de/jpolster/overlay.html";
+  var file = "file:///home/urmikl18/Test/SoftwareProject/LLIBrowser/overlay.html";
+  //var file = "http://www-e.uni-magdeburg.de/jpolster/LLIBrowser/overlay.html";
   var completePath = file.concat("?url=").concat(currUrl);
 
   tabs.open(completePath)
