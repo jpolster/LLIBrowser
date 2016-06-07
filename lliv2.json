@@ -1,0 +1,150 @@
+[{
+  "@context": {
+    "dbpedia": "http://dbpedia.org/resource/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "foaf": "http://xmlns.com/foaf/0.1/",
+    "lom": "http://ltsc.ieee.org/rdf/lomv1p0/lom#",
+    "lomvoc": "http://ltsc.ieee.org/rdf/lomv1p0/vocabulary#",
+    "map": "file:/home/flag/D2RQ/lom.n3#",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "schema": "http://schema.org/",
+    "vcard": "http://www.w3.org/2001/vcard-rdf/3.0#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+
+    "@id": "http://stackoverflow.com/questions/1012573/getting-started-with-haskell",
+    "@type": "lom:LearningObject",
+    "dcterms:language": "en",
+    "dcterms:title": {
+        "@language": "en",
+        "@value": "Getting started with Haskell "
+    },
+    "lom:description": {
+        "dcterms:description": {
+            "@language": "en",
+            "@value": "For a few days I've tried to wrap my head around the functional programming paradigm in Haskell. I've done this by reading tutorials and watching screencasts, but nothing really seems to stick. Now, in learning various imperative/OO languages (like C, Java, PHP), exercises have been a good way for me to go. But since I don't really know what Haskell is capable of and because there are many new concepts to utilize, I haven't known where to start. So, how did you learn Haskell? What made you really \"break the ice\"? Also, any good ideas for beginning exercises?"
+        }
+    },
+    "schema:image": {
+        "@id": "http://cdn.sstatic.net/stackoverflow/company/img/logos/so/so-icon.png"
+    },
+    "lom:educational": {
+        "dcterms:type": [
+            {
+                "@id": "lomvoc:LearningResourceType-problemStatement",
+                "rdf:label": "problem statement"
+            },
+            {
+                "@id": "lomvoc:LearningResourceType-narrativeText",
+                "rdf:label": "narrative text"
+            }
+        ],
+        "lom:educationalInteractivityLevel": {
+            "@id": "lomvoc:InteractivityLevel-medium",
+            "rdf:label": "medium"
+        },
+        "lom:educationalInteractivityType": {
+            "@id": "lomvoc:InteractivityType-expositive",
+            "rdf:label" : "expositive"
+        },
+        "lom:educationalLanguage": "en",
+        "lom:educationalTypicalAgeRange": {
+            "rdf:value": {
+                "@language": "en",
+                "@value": "8-U"
+            },  
+            "rdf:label": "8-10 years"
+        }
+    },
+    "lom:identifier": {       
+            "dcterms:identifier": {
+                "@id": "http://stackoverflow.com/questions/1012573/getting-started-with-haskell"
+            },
+            "lom:identifierCatalog": "stackoverflow"
+        },
+    "lom:metaMetadataLanguage": "en",
+        "lom:metadataSchema": [
+            "LOMv1.0",
+            "LLIv0.1"
+        ],
+    "lom:technicalLocation": {
+            "@id": "http://stackoverflow.com/questions/1012573/getting-started-with-haskell"
+        }
+},
+{
+  "@context": {
+    "dbpedia": "http://dbpedia.org/resource/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "foaf": "http://xmlns.com/foaf/0.1/",
+    "lom": "http://ltsc.ieee.org/rdf/lomv1p0/lom#",
+    "lomvoc": "http://ltsc.ieee.org/rdf/lomv1p0/vocabulary#",
+    "map": "file:/home/flag/D2RQ/lom.n3#",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "schema": "http://schema.org/",
+    "vcard": "http://www.w3.org/2001/vcard-rdf/3.0#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+
+    "@id": "http://stackoverflow.com/questions/1012573/getting-started-with-haskell",
+    "@type": "lom:LearningObject",
+    "dcterms:language": "en",
+    "dcterms:title": {
+        "@language": "en",
+        "@value": "Getting started with Haskell "
+    },
+    "lom:description": {
+        "dcterms:description": {
+            "@language": "en",
+            "@value": "For a few days I've tried to wrap my head around the functional programming paradigm in Haskell. I've done this by reading tutorials and watching screencasts, but nothing really seems to stick. Now, in learning various imperative/OO languages (like C, Java, PHP), exercises have been a good way for me to go. But since I don't really know what Haskell is capable of and because there are many new concepts to utilize, I haven't known where to start. So, how did you learn Haskell? What made you really \"break the ice\"? Also, any good ideas for beginning exercises?"
+        }
+    },
+    "schema:image": {
+        "@id": "http://cdn.sstatic.net/stackoverflow/company/img/logos/so/so-icon.png"
+    },
+    "lom:educational": {
+        "dcterms:type": [
+            {
+                "@id": "lomvoc:LearningResourceType-problemStatement",
+                "rdf:label": "problem statement"
+            },
+            {
+                "@id": "lomvoc:LearningResourceType-narrativeText",
+                "rdf:label": "narrative text"
+            }
+        ],
+        "lom:educationalInteractivityLevel": {
+            "@id": "lomvoc:InteractivityLevel-medium",
+            "rdf:label": "medium"
+        },
+        "lom:educationalInteractivityType": {
+            "@id": "lomvoc:InteractivityType-expositive",
+            "rdf:label" : "expositive"
+        },
+        "lom:educationalLanguage": "en",
+        "lom:educationalTypicalAgeRange": {
+            "rdf:value": {
+                "@language": "en",
+                "@value": "8-U"
+            },  
+            "rdf:label": "8-10 years"
+        }
+    },
+    "lom:identifier": {       
+            "dcterms:identifier": {
+                "@id": "http://stackoverflow.com/questions/1012573/getting-started-with-haskell"
+            },
+            "lom:identifierCatalog": "stackoverflow"
+        },
+    "lom:metaMetadataLanguage": "en",
+        "lom:metadataSchema": [
+            "LOMv1.0",
+            "LLIv0.1"
+        ],
+    "lom:technicalLocation": {
+            "@id": "http://stackoverflow.com/questions/1012573/getting-started-with-haskell"
+        }
+}]
