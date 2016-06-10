@@ -1,7 +1,17 @@
+/**
+ *@file Entrance point for the Add-On
+ *@module index.js
+ */
+
 var { ActionButton } = require("sdk/ui/button/action");
 var tabs = require("sdk/tabs");
 var data = require("sdk/self").data; 
 
+/**
+ *@var button
+ *@type ActionButton
+ *@desc Add-On start button
+ */
 var button = ActionButton({
     id: "my-button",
     label: "Start LLIBrowser",
@@ -10,6 +20,12 @@ var button = ActionButton({
     },
     onClick: showPlugIn
   });
+
+/**
+ *@function showPlugIn
+ *@param state
+ *@returns Opens the add-on in a new tab with the current page URL as a parameter
+*/
 
 function showPlugIn(state){	
   let currUrl = tabs.activeTab.url;
