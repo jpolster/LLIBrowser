@@ -6,14 +6,14 @@ var button = ActionButton({
     id: "my-button",
     label: "Start LLIBrowser",
     icon: {
-      "16": "./logo-16.png"
+      "16": "./img/logo-16.png"
     },
     onClick: showPlugIn
   });
 
 function showPlugIn(state){	
   let currUrl = tabs.activeTab.url;
-  var file = "file:///home/urmikl18/Test/SoftwareProject/LLIBrowser/overlay.html";
+  var file = "file:///home/urmikl18/Test/SoftwareProject/LLIBrowser/data/overlay.html";
   //var file = "http://www-e.uni-magdeburg.de/jpolster/LLIBrowser/overlay.html";
   var completePath = file.concat("?url=").concat(currUrl);
 

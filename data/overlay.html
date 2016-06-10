@@ -1,28 +1,12 @@
 <!DOCTYPE html>
 <html ng-app="llibrowser">
 <head>
-  <link rel="stylesheet" type="text/css" href="bootstrap.min.css"/>
+  <link rel="stylesheet" type="text/css" href="lib/bootstrap.min.css"/>
 </head>
 <body>
-  <script type="text/javascript" src="angular.min.js"></script>
-  <script type="text/javascript" src="app.js"></script>
-  <!--
-  <script type="text/javascript">
-  var encoded = "";
-  function extractUrl()
-  {
-    var parameters = location.search.substring(1).split("&");
-
-    var temp = parameters[0].split("=");
-    var url = unescape(temp[1]);
-
-    encoded = encodeURIComponent(url);
-
-    document.getElementById("url").innerHTML = encoded;
-  }
-  //extractUrl();
-  </script>-->
-
+  <script type="text/javascript" src="lib/angular.min.js"></script>
+  <script type="text/javascript" src="scripts/app.js"></script>
+  
   <form name="newPage" ng-controller="newPageCtrl as newlink" ng-submit="newPage.$valid && newlink.setURL()" novalidate style="position:relative; clear:both; zIndex:100; width:100%; background-color:#313192; color:black">
     <input ng-model="newlink.newURL" type="url" placeholder="Insert new link for LLIs" required style="width:90%"/>
     <input type="submit" value="Reload"/>

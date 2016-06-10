@@ -69,9 +69,6 @@
     	this.setURL=function() {
     		this.oldURL=encodeURIComponent(this.newURL);
     		this.newURL="";
-    		var file = "file:///home/urmikl18/Test/SoftwareProject/LLIBrowser/overlay.html";
-    		var completePath = file.concat("?url=").concat(this.oldURL);
-  			$location.path(completePath);
     	};
 
 	}]);
