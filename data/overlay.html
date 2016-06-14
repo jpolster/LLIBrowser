@@ -3,9 +3,9 @@
 <head>
   <link rel="stylesheet" type="text/css" href="lib/bootstrap.min.css"/>
 </head>
-<body>
+<body ng-controller="ServerCtrl as storage">
   <script type="text/javascript" src="lib/angular.min.js"></script>
-  <script type="text/javascript" src="scripts/app.js"></script>
+  <script type="text/javascript" src="app.js"></script>
   
   <form name="newPage" ng-controller="newPageCtrl as newlink" ng-submit="newPage.$valid && newlink.setURL()" novalidate style="position:relative; clear:both; zIndex:100; width:100%; background-color:#313192; color:black">
     <input ng-model="newlink.newURL" type="url" placeholder="Insert new link for LLIs" required style="width:90%"/>
@@ -29,7 +29,7 @@
   <div style="margin: 0 auto; left: 10px; top: 50px; width: 98%; height: 50%; align: middle; background-color:#75bbf7; visibility: visible">
     <div id="FAQTab">
       <form ng-show="tab.isSelected(1) && tab.activeTabs[0]">
-        <div style="float: left; margin-top:10px; margin-left:3.5%; width:17%; height: 70%; background-color:white; color:black">LLI1</div>
+        <div style="float: left; margin-top:10px; margin-left:3.5%; width:17%; height: 70%; background-color:white; color:black">{{storage.llis["dcterms:title"]["@value"]}}</div>
         <div style="float: left; margin-top:10px; margin-left:2%; width:17%; height: 70%; background-color:white; color:black">LLI2</div>
         <div style="float: left; margin-top:10px; margin-left:2%; width:17%; height: 70%; background-color:white; color:black">LLI3</div>
         <div style="float: left; margin-top:10px; margin-left:2%; width:17%; height: 70%; background-color:white; color:black">LLI4</div>

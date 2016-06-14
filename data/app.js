@@ -141,6 +141,24 @@
 	});
 
 	/**
+	 *@name ServerCtrl
+	 *@type angular.controller
+	 *@desc Controller that enables fetching .json from server
+	 */
+	app.controller('ServerCtrl',['$http', function($http) {
+    var storage=this;
+    storage.llis=[];
+    var pageURL="http://localhost:3000/resource/http%3A%2F%2Fwww.google.com";
+    $http.get(pageURL).success(function(data){
+      console.log("Successful connections with server");
+      storage.llis=data;
+    })
+    .error(function(data){
+    	console.log("Connection with server failed");
+    });
+  }]);
+
+	/**
 	 *@const ACTIVE_TAB_STYLE
 	 *@desc The background-color for the active tab
 	 *@default #75bbf7
