@@ -7,11 +7,11 @@
   <script type="text/javascript" src="lib/angular.min.js"></script>
   <script type="text/javascript" src="app.js"></script>
   
-  <form name="newPage" ng-controller="newPageCtrl as newlink" ng-submit="newPage.$valid && newlink.setURL()" novalidate style="position:relative; clear:both; zIndex:100; width:100%; background-color:#313192; color:black">
-    <input ng-model="newlink.newURL" type="url" placeholder="Insert new link for LLIs" required style="width:90%"/>
+  <form name="newPage" ng-submit="newPage.$valid && storage.setURL()" novalidate style="position:relative; clear:both; zIndex:100; width:100%; background-color:#313192; color:black">
+    <input ng-model="storage.newURL" type="url" placeholder="Insert new link for LLIs" required style="width:90%"/>
     <input type="submit" value="Reload"/>
-    <p style="color: white">Active link: {{newlink.oldURL}}</p>
-    <p style="color: white">Future link: {{newlink.newURL}}</p>
+    <p style="color: white">Active link: {{storage.oldURL}}</p>
+    <p style="color: white">Future link: {{storage.newURL}}</p>
   </form>
 
  <div style="position:relative; clear:both; zIndex:100; width:100%; height:150px; background-color:#313192; color:white" ng-controller="TabCtrl as tab">
@@ -28,12 +28,8 @@
 
   <div style="margin: 0 auto; left: 10px; top: 50px; width: 98%; height: 50%; align: middle; background-color:#75bbf7; visibility: visible">
     <div id="FAQTab">
-      <form ng-show="tab.isSelected(1) && tab.activeTabs[0]">
-        <div style="float: left; margin-top:10px; margin-left:3.5%; width:17%; height: 70%; background-color:white; color:black">{{storage.llis["dcterms:title"]["@value"]}}</div>
-        <div style="float: left; margin-top:10px; margin-left:2%; width:17%; height: 70%; background-color:white; color:black">LLI2</div>
-        <div style="float: left; margin-top:10px; margin-left:2%; width:17%; height: 70%; background-color:white; color:black">LLI3</div>
-        <div style="float: left; margin-top:10px; margin-left:2%; width:17%; height: 70%; background-color:white; color:black">LLI4</div>
-        <div style="float: left; margin-top:10px; margin-left:2%; margin-right:3.5%; width:17%; height: 70%; background-color:white; color:black">LLI5</div>
+      <form ng-show="tab.isSelected(1) && tab.activeTabs[0]" ng-repeat="lli in storage.llis">
+        <div style="float: left; margin-top:10px; margin-left:3.5%; width:17%; height: 70%; background-color:white; color:black">{{lli["dcterms:title"]["@value"]}}</div>
       </form>
     </div>
      <div id="CodeTab">

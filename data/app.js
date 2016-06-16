@@ -95,12 +95,15 @@
 	});
 
 	/**
-	 *@name newPageCtrl
+	 *@name ServerCtrl
 	 *@type angular.controller
-	 *@desc Controller that allows user to refresh add-on with new URL
+	 *@desc Controller that enables fetching .json from server
 	 */
-	app.controller('newPageCtrl',  function() {
-		/**
+	app.controller('ServerCtrl',['$http', function($http) {
+    	var storage=this;
+    	storage.llis=[];
+
+    	/**
 		 *@var parameters
 		 *@desc Extracted parameters from the address
 		 */
@@ -123,6 +126,16 @@
     	 */
     	this.oldURL = encodeURIComponent(page);
 
+    	//var pageURL="http://localhost:3000/resource/"+this.oldURL;
+    	var pageURL="products.json";
+    	$http.get(pageURL).success(function(data){
+      	console.log("Successful connections with server");
+      	storage.llis=data;
+    	})
+    	.error(function(data){
+    	console.log("Connection with server failed");
+    	});
+
     	/**
     	 *@var newURL
     	 *@desc The new value of URL for LLIDelivery
@@ -136,27 +149,17 @@
     	this.setURL=function() {
     		this.oldURL=encodeURIComponent(this.newURL);
     		this.newURL="";
+    		//var pageURL="http://localhost:3000/resource/"+this.oldURL;
+    		var pageURL="products.json";
+    		$http.get(pageURL).success(function(data){
+      		console.log("Successful connections with server");
+      		storage.llis=data;
+    		})
+    		.error(function(data){
+    		console.log("Connection with server failed");
+    		});
     	};
-
-	});
-
-	/**
-	 *@name ServerCtrl
-	 *@type angular.controller
-	 *@desc Controller that enables fetching .json from server
-	 */
-	app.controller('ServerCtrl',['$http', function($http) {
-    var storage=this;
-    storage.llis=[];
-    var pageURL="http://localhost:3000/resource/http%3A%2F%2Fwww.google.com";
-    $http.get(pageURL).success(function(data){
-      console.log("Successful connections with server");
-      storage.llis=data;
-    })
-    .error(function(data){
-    	console.log("Connection with server failed");
-    });
-  }]);
+  	}]);
 
 	/**
 	 *@const ACTIVE_TAB_STYLE
