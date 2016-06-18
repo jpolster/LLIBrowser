@@ -110,7 +110,7 @@
         "dcterms:type": [
             {
                 "@id": "lomvoc:LearningResourceType-problemStatement",
-                "rdf:label": "problem statement"
+                "rdf:label": "faq"
             },
             {
                 "@id": "lomvoc:LearningResourceType-narrativeText",
@@ -185,11 +185,11 @@
         "dcterms:type": [
             {
                 "@id": "lomvoc:LearningResourceType-problemStatement",
-                "rdf:label": "problem statement"
+                "rdf:label": "video"
             },
             {
                 "@id": "lomvoc:LearningResourceType-narrativeText",
-                "rdf:label": "narrative text"
+                "rdf:label": "faq"
             }
         ],
         "lom:educationalInteractivityLevel": {
@@ -260,7 +260,7 @@
         "dcterms:type": [
             {
                 "@id": "lomvoc:LearningResourceType-problemStatement",
-                "rdf:label": "problem statement"
+                "rdf:label": "code"
             },
             {
                 "@id": "lomvoc:LearningResourceType-narrativeText",
