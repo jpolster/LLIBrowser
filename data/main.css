@@ -1,0 +1,33 @@
+.div-masthead {
+	position:relative; 
+	clear:both; 
+	width:100%; 
+	height:200px; 
+	background-color:#313192; 
+	color:white;
+	box-shadow: inset 0 -2px 5px rgba(0,0,0,.5);
+}
+
+.tabs-nav-item {
+	position: relative;
+	display: inline-block;
+	color: white; 
+	height: 20px; 
+	padding: 5px auto;
+	text-decoration: none;
+}
+
+.tabs-nav-item:hover {
+	text-decoration: none;
+	font-weight: bolder;
+	color:white;
+}
+
+.lli-nav-div {
+	float: left; 
+	margin-top:10px; 
+	margin-left:3.5%; 
+	width:17%; height: 70%; 
+	background-color:white; 
+	color:black
+}

@@ -1,22 +1,30 @@
 <!DOCTYPE html>
 <html ng-app="llibrowser">
 <head>
-  <link rel="stylesheet" type="text/css" href="lib/bootstrap.min.css"/>
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="main.css"/>
 </head>
 <body ng-controller="ServerCtrl as storage">
   <script type="text/javascript" src="lib/angular.min.js"></script>
   <script type="text/javascript" src="app.js"></script>
+  <script type="text/javascript" src="https://code.angularjs.org/1.5.5/angular-sanitize.js"></script>
   
-  <form name="newPage" ng-submit="newPage.$valid && storage.setURL()" novalidate style="position:relative; clear:both; zIndex:100; width:100%; background-color:#313192; color:black">
+  <form id="newPageForm" name="newPage" ng-submit="newPage.$valid && storage.setURL()" novalidate style="position:relative; clear:both; width:100%; background-color:#313192; color:black; display:none;">
     <input ng-model="storage.newURL" type="url" placeholder="Insert new link for LLIs" required style="width:90%"/>
     <input type="submit" value="Reload"/>
     <p style="color: white">Active link: {{storage.oldURL}}</p>
     <p style="color: white">Future link: {{storage.newURL}}</p>
   </form>
 
- <div style="position:relative; clear:both; zIndex:100; width:100%; height:150px; background-color:#313192; color:white" ng-controller="TabCtrl as tab">
+ <div class="div-masthead" ng-controller="TabCtrl as tab">
+
+  <button id="search-btn" type="button" class="btn btn-default pull-right" onclick="{document.getElementById('newPageForm').style.display = 'block';}">
+    <span class="glyphicon glyphicon-search"></span> Search
+  </button>
   
-  <form style="margin: 0 auto; left: 10px; top: 50px; width: 98%;align: middle; visibility: visible">
+  <form style="margin: 0 auto; left: 10px; top: 50px; width: 98%; align: middle; visibility: visible">
     <label for="FAQ" style="color: white"> <input type="checkbox" checked="checked" name="FAQ" value="FAQ" id="FAQ" ng-model="tab.activeTabs[0]"/> FAQ</label>
     <label for="code" style="color: white"> <input type="checkbox" checked="checked" name="code" value="code" id="code" ng-model="tab.activeTabs[1]" />Code</label>
     <label for="video" style="color: white"> <input type="checkbox" checked="checked" name="video" value="video" id="video" ng-model="tab.activeTabs[2]" /> Video</label>
@@ -26,10 +34,10 @@
     <label for="narrativtext" style="color: white"> <input type="checkbox" checked="checked" name="narrativtext" value="narrativtext" id="narrativtext" ng-model="tab.activeTabs[6]"/> narrativ Text </label>
   </form>
 
-  <div style="margin: 0 auto; left: 10px; top: 50px; width: 98%; height: 50%; align: middle; background-color:#75bbf7; visibility: visible">
+  <div style="margin-left: 19px; margin-top:15px; left: 10px; top: 50px; width: 98%; height: 60%; align: middle; background-color:#75bbf7; visibility: visible">
     <div id="FAQTab">
       <form ng-show="tab.isSelected(1) && tab.activeTabs[0]" ng-repeat="faq in storage.faqs">
-        <div style="float: left; margin-top:10px; margin-left:3.5%; width:17%; height: 70%; background-color:white; color:black">{{faq["dcterms:title"]["@value"]}}</div>
+        <div id="inner-div01" style="float: left; margin-top:10px; margin-left:3.5%; width:17%; height: 70%; background-color:white; color:black"> {{faq["dcterms:title"]["@value"]}}</div>
       </form>
     </div>
      <div id="CodeTab">
@@ -65,14 +73,20 @@
   </div>
 
   <form style="margin: 0 auto; left: 10px; top: 50px; width: 98%;align: middle; background-color:#313192; visibility: visible">
-    <a href="#video" style="color: white; background-color: #75bbf7; height: 15px; padding: 5px auto" ng-style="tab.tabStyle[0]" ng-click="tab.selectTab(1);" ng-show="tab.activeTabs[0]">FAQ</a>
-    <a href="#forum" style="color: white; background-color: #313192; height: 15px; padding: 5px auto" ng-style="tab.tabStyle[1]" ng-click="tab.selectTab(2);" ng-show="tab.activeTabs[1]">Code</a>
-    <a href="#FAQ" style="color: white; background-color: #313192; height: 15px; padding: 5px auto" ng-style="tab.tabStyle[2]" ng-click="tab.selectTab(3);" ng-show="tab.activeTabs[2]">Video</a>
-    <a href="#code" style="color: white; background-color: #313192; height: 15px; padding: 5px auto" ng-style="tab.tabStyle[3]" ng-click="tab.selectTab(4);" ng-show="tab.activeTabs[3]">Audio</a>
-    <a href="#audio" style="color: white; background-color: #313192; height: 15px; padding: 5px auto" ng-style="tab.tabStyle[4]" ng-click="tab.selectTab(5);"ng-show="tab.activeTabs[4]">Slides</a>
-    <a href="#image" style="color: white; background-color: #313192; height: 15px; padding: 5px auto" ng-style="tab.tabStyle[5]" ng-click="tab.selectTab(6);" ng-show="tab.activeTabs[5]">Table</a>
-    <a href="#narrativeText" style="color: white; background-color: #313192; height: 15px; padding: 5px auto" ng-style="tab.tabStyle[6]" ng-click="tab.selectTab(7);" ng-show="tab.activeTabs[6]">narrativ Text</a>
+    <a class="tabs-nav-item" href="#FAQ" ng-style="tab.tabStyle[0]" ng-click="tab.selectTab(1);" ng-show="tab.activeTabs[0]">FAQ</a>
+    <a  class="tabs-nav-item" href="#code" ng-style="tab.tabStyle[1]" ng-click="tab.selectTab(2);" ng-show="tab.activeTabs[1]">Code</a>
+    <a  class="tabs-nav-item" href="#video" ng-style="tab.tabStyle[2]" ng-click="tab.selectTab(3);" ng-show="tab.activeTabs[2]">Video</a>
+    <a class="tabs-nav-item" href="#audio" ng-style="tab.tabStyle[3]" ng-click="tab.selectTab(4);" ng-show="tab.activeTabs[3]">Audio</a>
+    <a class="tabs-nav-item" href="#slides" ng-style="tab.tabStyle[4]" ng-click="tab.selectTab(5);"ng-show="tab.activeTabs[4]">Slides</a>
+    <a class="tabs-nav-item" href="#table" ng-style="tab.tabStyle[5]" ng-click="tab.selectTab(6);" ng-show="tab.activeTabs[5]">Table</a>
+    <a class="tabs-nav-item" href="#narrativeText" ng-style="tab.tabStyle[6]" ng-click="tab.selectTab(7);" ng-show="tab.activeTabs[6]">narrativ Text</a>
   </form>
+
+</div>
+<div ng-controller="expandCtrl" class="container">
+	<div id="main-div">
+		<p ng-bind-html="myHTML"></p>
+	</div>
 </div>
 
 </body>

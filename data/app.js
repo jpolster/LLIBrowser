@@ -8,7 +8,7 @@
 	*@type angular.module
 	*@name llibrowser
 	*/
-	var app = angular.module('llibrowser', []);
+	var app = angular.module('llibrowser', ['ngSanitize']);
 
 	/**
 	 *@name TabCtrl
@@ -286,6 +286,9 @@
     	});
     	};
   	}]);
+    app.controller('expandCtrl', ['$scope', function($scope) {
+    $scope.myHTML ="<h1>test</h1>";
+    }]);
 
 	/**
 	 *@const ACTIVE_TAB_STYLE
