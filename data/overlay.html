@@ -11,7 +11,7 @@
   <script type="text/javascript" src="app.js"></script>
   <script type="text/javascript" src="https://code.angularjs.org/1.5.5/angular-sanitize.js"></script>
   
-  <form id="newPageForm" name="newPage" ng-submit="newPage.$valid && storage.setURL()" novalidate style="position:relative; clear:both; width:100%; background-color:#313192; color:black; display:none;">
+  <form id="newPageForm" class="collapse" name="newPage" ng-submit="newPage.$valid && storage.setURL()" novalidate style="position:relative; clear:both; width:100%; background-color:#313192; color:black;">
     <input ng-model="storage.newURL" type="url" placeholder="Insert new link for LLIs" required style="width:90%"/>
     <input type="submit" value="Reload"/>
     <p style="color: white">Active link: {{storage.oldURL}}</p>
@@ -20,7 +20,7 @@
 
  <div class="div-masthead" ng-controller="TabCtrl as tab">
 
-  <button id="search-btn" type="button" data-toggle="tooltip" title="enter a new url" class="btn btn-default pull-right" onclick="{document.getElementById('newPageForm').style.display = 'block';}">
+  <button id="search-btn" type="button" class="btn btn-default pull-right" data-toggle="collapse" data-target="#newPageForm">
     <span class="glyphicon glyphicon-search"></span> Search
   </button>
   
@@ -37,7 +37,7 @@
   <div style="margin-left: 19px; margin-top:15px; left: 10px; top: 50px; width: 98%; height: 60%; align: middle; background-color:#75bbf7; visibility: visible">
     <div id="FAQTab">
       <form ng-show="tab.isSelected(1) && tab.activeTabs[0]" ng-repeat="faq in storage.faqs">
-        <div id="inner-div01" style="float: left; margin-top:10px; margin-left:3.5%; width:17%; height: 70%; background-color:white; color:black"> {{faq["dcterms:title"]["@value"]}}</div>
+        <div id="inner-div01" data-toggle="collapse" data-target="#main-div" style="float: left; margin-top:10px; margin-left:3.5%; width:17%; height: 70%; background-color:white; color:black"> {{faq["dcterms:title"]["@value"]}}</div>
       </form>
     </div>
      <div id="CodeTab">
@@ -84,7 +84,7 @@
 
 </div>
 <div ng-controller="expandCtrl" class="container">
-	<div id="main-div">
+	<div id="main-div" class="collapse">
 		<p ng-bind-html="myHTML"></p>
 	</div>
 
