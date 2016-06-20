@@ -20,7 +20,7 @@
 
  <div class="div-masthead" ng-controller="TabCtrl as tab">
 
-  <button id="search-btn" type="button" class="btn btn-default pull-right" onclick="{document.getElementById('newPageForm').style.display = 'block';}">
+  <button id="search-btn" type="button" data-toggle="tooltip" title="enter a new url" class="btn btn-default pull-right" onclick="{document.getElementById('newPageForm').style.display = 'block';}">
     <span class="glyphicon glyphicon-search"></span> Search
   </button>
   
@@ -87,6 +87,7 @@
 	<div id="main-div">
 		<p ng-bind-html="myHTML"></p>
 	</div>
+
 </div>
 
 </body>
