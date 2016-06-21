@@ -34,40 +34,40 @@
     <label for="narrativtext" style="color: white"> <input type="checkbox" checked="checked" name="narrativtext" value="narrativtext" id="narrativtext" ng-model="tab.activeTabs[6]"/> narrativ Text </label>
   </form>
 
-  <div style="margin-left: 19px; margin-top:15px; left: 10px; top: 50px; width: 98%; height: 60%; align: middle; background-color:#75bbf7; visibility: visible">
+  <div style="margin-left: 19px; margin-top:15px; left: 10px; top: 50px; width: 98%; height: 60%; align: middle; background-color:#75bbf7; visibility: visible" ng-controller="expandCtrl as expand">
     <div id="FAQTab">
       <form ng-show="tab.isSelected(1) && tab.activeTabs[0]" ng-repeat="faq in storage.faqs">
-        <div id="inner-div01" data-toggle="collapse" data-target="#main-div" style="float: left; margin-top:10px; margin-left:3.5%; width:17%; height: 70%; background-color:white; color:black"> {{faq["dcterms:title"]["@value"]}}</div>
+        <div id="inner-div01" ng-click="expand.displayJSON(faq)" data-toggle="collapse" data-target="#main-div" style="float: left; margin-top:10px; margin-left:3.5%; width:17%; height: 70%; background-color:white; color:black"> {{faq["dcterms:title"]["@value"]}}</div>
       </form>
     </div>
      <div id="CodeTab">
       <form ng-show="tab.isSelected(2) && tab.activeTabs[1]" ng-repeat="code in storage.codes">
-        <div style="float: left; margin-top:10px; margin-left:3.5%; width:17%; height: 70%; background-color:white; color:black">{{code["dcterms:title"]["@value"]}}</div>
+        <div style="float: left; margin-top:10px; margin-left:3.5%; width:17%; height: 70%; background-color:white; color:black" ng-click="expand.displayJSON(code)" data-toggle="collapse" data-target="#main-div">{{code["dcterms:title"]["@value"]}}</div>
       </form>
     </div>
     <div id="VideoTab">
       <form ng-show="tab.isSelected(3) && tab.activeTabs[2]" ng-repeat="video in storage.videos">
-        <div style="float: left; margin-top:10px; margin-left:3.5%; width:17%; height: 70%; background-color:white; color:black">{{video["dcterms:title"]["@value"]}}</div>
+        <div style="float: left; margin-top:10px; margin-left:3.5%; width:17%; height: 70%; background-color:white; color:black" ng-click="expand.displayJSON(video)" data-toggle="collapse" data-target="#main-div">{{video["dcterms:title"]["@value"]}}</div>
       </form>
     </div>
     <div id="AudioTab">
       <form ng-show="tab.isSelected(4) && tab.activeTabs[3]" ng-repeat="audio in storage.audios">
-        <div style="float: left; margin-top:10px; margin-left:3.5%; width:17%; height: 70%; background-color:white; color:black">{{audio["dcterms:title"]["@value"]}}</div>
+        <div style="float: left; margin-top:10px; margin-left:3.5%; width:17%; height: 70%; background-color:white; color:black" ng-click="expand.displayJSON(audio)" data-toggle="collapse" data-target="#main-div">{{audio["dcterms:title"]["@value"]}}</div>
       </form>
     </div>
     <div id="SlidesTab">
       <form ng-show="tab.isSelected(5) && tab.activeTabs[4]" ng-repeat="slide in storage.slides">
-        <div style="float: left; margin-top:10px; margin-left:3.5%; width:17%; height: 70%; background-color:white; color:black">{{slide["dcterms:title"]["@value"]}}</div>
+        <div style="float: left; margin-top:10px; margin-left:3.5%; width:17%; height: 70%; background-color:white; color:black" ng-click="expand.displayJSON(slide)" data-toggle="collapse" data-target="#main-div">{{slide["dcterms:title"]["@value"]}}</div>
       </form>
     </div>
     <div id="TableTab">
       <form ng-show="tab.isSelected(6) && tab.activeTabs[5]" ng-repeat="table in storage.tables">
-        <div style="float: left; margin-top:10px; margin-left:3.5%; width:17%; height: 70%; background-color:white; color:black">{{table["dcterms:title"]["@value"]}}</div>
+        <div style="float: left; margin-top:10px; margin-left:3.5%; width:17%; height: 70%; background-color:white; color:black" ng-click="expand.displayJSON(table)" data-toggle="collapse" data-target="#main-div">{{table["dcterms:title"]["@value"]}}</div>
       </form>
     </div>
     <div id="TextTab">
       <form ng-show="tab.isSelected(7) && tab.activeTabs[6]" ng-repeat="text in storage.texts">
-        <div style="float: left; margin-top:10px; margin-left:3.5%; width:17%; height: 70%; background-color:white; color:black">{{text["dcterms:title"]["@value"]}}</div>
+        <div style="float: left; margin-top:10px; margin-left:3.5%; width:17%; height: 70%; background-color:white; color:black" ng-click="expand.displayJSON(text)" data-toggle="collapse" data-target="#main-div">{{text["dcterms:title"]["@value"]}}</div>
       </form>
     </div>
   </div>
@@ -83,11 +83,9 @@
   </form>
 
 </div>
-<div ng-controller="expandCtrl" class="container">
-	<div id="main-div" class="collapse">
-		<p ng-bind-html="myHTML"></p>
-	</div>
-
+<div ng-controller="expandCtrl" class="container" id="main-div">
+	<table id="displayTable">
+	</table>
 </div>
 
 </body>

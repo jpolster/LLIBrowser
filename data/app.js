@@ -286,8 +286,37 @@
     	});
     	};
   	}]);
+    
     app.controller('expandCtrl', ['$scope', function($scope) {
-    $scope.myHTML ="<h1>test</h1>";
+        this.displayJSON = function(lli) {
+            var table=document.getElementById("displayTable");
+            table.innerHTML="";
+
+            var row=table.insertRow(0);
+            var cell1=row.insertCell(0);
+            var cell2=row.insertCell(1);
+            cell1.innerHTML="Title";
+            cell2.innerHTML=lli["dcterms:title"]["@value"];
+
+            row=table.insertRow(1);
+            cell1=row.insertCell(0);
+            cell2=row.insertCell(1);
+            cell1.innerHTML="Description";
+            cell2.innerHTML=lli["lom:description"]["dcterms:description"]["@value"];
+
+            row=table.insertRow(2);
+            cell1=row.insertCell(0);
+            cell2=row.insertCell(1);
+            cell1.innerHTML="Source";
+            cell2.innerHTML=lli["lom:identifier"]["dcterms:identifier"]["@id"];
+
+            row=table.insertRow(3);
+            cell1=row.insertCell(0);
+            cell2=row.insertCell(1);
+            cell1.innerHTML="Catalog";
+            cell2.innerHTML=lli["lom:identifier"]["lom:identifierCatalog"];            
+        };
+
     }]);
 
 	/**

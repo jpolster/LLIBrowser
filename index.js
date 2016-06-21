@@ -29,7 +29,7 @@ var button = ActionButton({
 
 function showPlugIn(state){	
   let currUrl = tabs.activeTab.url;
-  var file = "file:///home/janine/OneDrive/Uni/OvGU/4. Semester/SoftwareProjekt/LLIBrowser-new03/data/overlay.html";
+  var file = "file:///home/urmikl18/Test/SoftwareProject/LLIBrowser/data/overlay.html";
   //var file = "http://www-e.uni-magdeburg.de/jpolster/LLIBrowser/overlay.html";
   var completePath = file.concat("?url=").concat(currUrl);
 
