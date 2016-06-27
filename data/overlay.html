@@ -1,92 +1,131 @@
 <!DOCTYPE html>
 <html ng-app="llibrowser">
 <head>
-  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
-  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-  <link rel="stylesheet" type="text/css" href="main.css"/>
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="main.css"/>
 </head>
 <body ng-controller="ServerCtrl as storage">
-  <script type="text/javascript" src="lib/angular.min.js"></script>
-  <script type="text/javascript" src="app.js"></script>
-  <script type="text/javascript" src="https://code.angularjs.org/1.5.5/angular-sanitize.js"></script>
-  
-  <form id="newPageForm" class="collapse" name="newPage" ng-submit="newPage.$valid && storage.setURL()" novalidate style="position:relative; clear:both; width:100%; background-color:#313192; color:black;">
-    <input ng-model="storage.newURL" type="url" placeholder="Insert new link for LLIs" required style="width:90%"/>
-    <input type="submit" value="Reload"/>
-    <p style="color: white">Active link: {{storage.oldURL}}</p>
-    <p style="color: white">Future link: {{storage.newURL}}</p>
-  </form>
+	<script type="text/javascript" src="lib/angular.min.js"></script>
+	<script type="text/javascript" src="app.js"></script>
+	<script type="text/javascript" src="https://code.angularjs.org/1.5.5/angular-sanitize.js"></script>
 
- <div class="div-masthead" ng-controller="TabCtrl as tab">
+	<form id="newPageForm" class="collapse" name="newPage" ng-submit="newPage.$valid && storage.setURL()" novalidate style="position:relative; clear:both; width:100%; background-color:#313192; color:black;">
+		<input ng-model="storage.newURL" type="url" placeholder="Insert new link for LLIs" required style="width:90%"/>
+		<input type="submit" value="Reload"/>
+		<p style="color: white">Active link: {{storage.oldURL}}</p>
+		<p style="color: white">Future link: {{storage.newURL}}</p>
+	</form>
 
-  <button id="search-btn" type="button" class="btn btn-default pull-right" data-toggle="collapse" rel="tooltip" title="reload with another url" data-target="#newPageForm">
-    <span class="glyphicon glyphicon-search"></span> Search
-  </button>
-  
-  <form style="margin: 0 auto; left: 10px; top: 50px; width: 98%; align: middle; visibility: visible">
-    <label for="FAQ" style="color: white"> <input type="checkbox" checked="checked" name="FAQ" value="FAQ" id="FAQ" ng-model="tab.activeTabs[0]"/> FAQ</label>
-    <label for="code" style="color: white"> <input type="checkbox" checked="checked" name="code" value="code" id="code" ng-model="tab.activeTabs[1]" />Code</label>
-    <label for="video" style="color: white"> <input type="checkbox" checked="checked" name="video" value="video" id="video" ng-model="tab.activeTabs[2]" /> Video</label>
-    <label for="audio" style="color: white"> <input type="checkbox" checked="checked" name="audio" value="audio" id="audio" ng-model="tab.activeTabs[3]"/> Audio </label>
-    <label for="slides" style="color: white"> <input type="checkbox" checked="checked" name="slides" value="slides" id="slides" ng-model="tab.activeTabs[4]"/> Slides </label>
-    <label for="table" style="color: white"> <input type="checkbox" checked="checked" name="table" value="table" id="table" ng-model="tab.activeTabs[5]"/> Table </label>
-    <label for="narrativtext" style="color: white"> <input type="checkbox" checked="checked" name="narrativtext" value="narrativtext" id="narrativtext" ng-model="tab.activeTabs[6]"/> narrativ Text </label>
-  </form>
+	<div class="div-masthead" ng-controller="TabCtrl as tab">
 
-  <div style="margin-left: 19px; margin-top:15px; left: 10px; top: 50px; width: 98%; height: 60%; align: middle; background-color:#75bbf7; visibility: visible" ng-controller="expandCtrl as expand">
-    <div id="FAQTab">
-      <form ng-show="tab.isSelected(1) && tab.activeTabs[0]" ng-repeat="faq in storage.faqs">
-        <div id="inner-div01" ng-click="expand.displayJSON(faq)" data-toggle="collapse" data-target="#main-div" style="float: left; margin-top:10px; margin-left:3.5%; width:17%; height: 70%; background-color:white; color:black"> {{faq["dcterms:title"]["@value"]}}</div>
-      </form>
-    </div>
-     <div id="CodeTab">
-      <form ng-show="tab.isSelected(2) && tab.activeTabs[1]" ng-repeat="code in storage.codes">
-        <div style="float: left; margin-top:10px; margin-left:3.5%; width:17%; height: 70%; background-color:white; color:black" ng-click="expand.displayJSON(code)" data-toggle="collapse" data-target="#main-div">{{code["dcterms:title"]["@value"]}}</div>
-      </form>
-    </div>
-    <div id="VideoTab">
-      <form ng-show="tab.isSelected(3) && tab.activeTabs[2]" ng-repeat="video in storage.videos">
-        <div style="float: left; margin-top:10px; margin-left:3.5%; width:17%; height: 70%; background-color:white; color:black" ng-click="expand.displayJSON(video)" data-toggle="collapse" data-target="#main-div">{{video["dcterms:title"]["@value"]}}</div>
-      </form>
-    </div>
-    <div id="AudioTab">
-      <form ng-show="tab.isSelected(4) && tab.activeTabs[3]" ng-repeat="audio in storage.audios">
-        <div style="float: left; margin-top:10px; margin-left:3.5%; width:17%; height: 70%; background-color:white; color:black" ng-click="expand.displayJSON(audio)" data-toggle="collapse" data-target="#main-div">{{audio["dcterms:title"]["@value"]}}</div>
-      </form>
-    </div>
-    <div id="SlidesTab">
-      <form ng-show="tab.isSelected(5) && tab.activeTabs[4]" ng-repeat="slide in storage.slides">
-        <div style="float: left; margin-top:10px; margin-left:3.5%; width:17%; height: 70%; background-color:white; color:black" ng-click="expand.displayJSON(slide)" data-toggle="collapse" data-target="#main-div">{{slide["dcterms:title"]["@value"]}}</div>
-      </form>
-    </div>
-    <div id="TableTab">
-      <form ng-show="tab.isSelected(6) && tab.activeTabs[5]" ng-repeat="table in storage.tables">
-        <div style="float: left; margin-top:10px; margin-left:3.5%; width:17%; height: 70%; background-color:white; color:black" ng-click="expand.displayJSON(table)" data-toggle="collapse" data-target="#main-div">{{table["dcterms:title"]["@value"]}}</div>
-      </form>
-    </div>
-    <div id="TextTab">
-      <form ng-show="tab.isSelected(7) && tab.activeTabs[6]" ng-repeat="text in storage.texts">
-        <div style="float: left; margin-top:10px; margin-left:3.5%; width:17%; height: 70%; background-color:white; color:black" ng-click="expand.displayJSON(text)" data-toggle="collapse" data-target="#main-div">{{text["dcterms:title"]["@value"]}}</div>
-      </form>
-    </div>
-  </div>
+		<button id="search-btn" type="button" class="btn btn-default pull-right" data-toggle="collapse" rel="tooltip" title="reload with another url" data-target="#newPageForm">
+			<span class="glyphicon glyphicon-search"></span> Search
+		</button>
 
-  <form style="margin: 0 auto; left: 10px; top: 50px; width: 98%;align: middle; background-color:#313192; visibility: visible">
-    <a class="tabs-nav-item" href="#FAQ" ng-style="tab.tabStyle[0]" ng-click="tab.selectTab(1);" ng-show="tab.activeTabs[0]">FAQ</a>
-    <a  class="tabs-nav-item" href="#code" ng-style="tab.tabStyle[1]" ng-click="tab.selectTab(2);" ng-show="tab.activeTabs[1]">Code</a>
-    <a  class="tabs-nav-item" href="#video" ng-style="tab.tabStyle[2]" ng-click="tab.selectTab(3);" ng-show="tab.activeTabs[2]">Video</a>
-    <a class="tabs-nav-item" href="#audio" ng-style="tab.tabStyle[3]" ng-click="tab.selectTab(4);" ng-show="tab.activeTabs[3]">Audio</a>
-    <a class="tabs-nav-item" href="#slides" ng-style="tab.tabStyle[4]" ng-click="tab.selectTab(5);"ng-show="tab.activeTabs[4]">Slides</a>
-    <a class="tabs-nav-item" href="#table" ng-style="tab.tabStyle[5]" ng-click="tab.selectTab(6);" ng-show="tab.activeTabs[5]">Table</a>
-    <a class="tabs-nav-item" href="#narrativeText" ng-style="tab.tabStyle[6]" ng-click="tab.selectTab(7);" ng-show="tab.activeTabs[6]">narrativ Text</a>
-  </form>
+		<form style="margin: 0 auto; left: 10px; top: 50px; width: 98%; align: middle; visibility: visible">
+			<label for="FAQ" style="color: white"> <input type="checkbox" checked="checked" name="FAQ" value="FAQ" id="FAQ" ng-model="tab.activeTabs[0]"/> FAQ</label>
+			<label for="code" style="color: white"> <input type="checkbox" checked="checked" name="code" value="code" id="code" ng-model="tab.activeTabs[1]" />Code</label>
+			<label for="video" style="color: white"> <input type="checkbox" checked="checked" name="video" value="video" id="video" ng-model="tab.activeTabs[2]" /> Video</label>
+			<label for="audio" style="color: white"> <input type="checkbox" checked="checked" name="audio" value="audio" id="audio" ng-model="tab.activeTabs[3]"/> Audio </label>
+			<label for="slides" style="color: white"> <input type="checkbox" checked="checked" name="slides" value="slides" id="slides" ng-model="tab.activeTabs[4]"/> Slides </label>
+			<label for="table" style="color: white"> <input type="checkbox" checked="checked" name="table" value="table" id="table" ng-model="tab.activeTabs[5]"/> Table </label>
+			<label for="narrativeText" style="color: white"> <input type="checkbox" checked="checked" name="narrativeText" value="narrativeText" id="narrativeText" ng-model="tab.activeTabs[6]"/> narrativ Text </label>
+		</form>
 
-</div>
-<div ng-controller="expandCtrl" class="container" id="main-div">
-	<table id="displayTable">
-	</table>
-</div>
+		<div style="margin-left: 19px; margin-top:15px; left: 10px; top: 50px; width: 98%; height: 60%; align: middle; background-color:#75bbf7; visibility: visible" ng-controller="expandCtrl as expand">
+			
+			<div id="FAQTab">
+				<form ng-show="tab.isSelected(1) && tab.activeTabs[0]" ng-repeat="faq in storage.faqs">
+					<div id="inner-div01" ng-click="expand.displayJSON(faq)" data-toggle="collapse" data-target="#main-div" style="float: left; margin-top:10px; margin-left:3.5%; width:17%; height: 70%; background-color:white; color:black"> {{faq["dcterms:title"]["@value"]}}</div>
+				</form>
+			</div>
+			<div id="CodeTab">
+				<form ng-show="tab.isSelected(2) && tab.activeTabs[1]" ng-repeat="code in storage.codes">
+					<div style="float: left; margin-top:10px; margin-left:3.5%; width:17%; height: 70%; background-color:white; color:black" ng-click="expand.displayJSON(code)" data-toggle="collapse" data-target="#main-div">{{code["dcterms:title"]["@value"]}}</div>
+				</form>
+			</div>
+			<div id="VideoTab">
+				<form ng-show="tab.isSelected(3) && tab.activeTabs[2]" ng-repeat="video in storage.videos">
+					<div style="float: left; margin-top:10px; margin-left:3.5%; width:17%; height: 70%; background-color:white; color:black" ng-click="expand.displayJSON(video)" data-toggle="collapse" data-target="#main-div">{{video["dcterms:title"]["@value"]}}</div>
+				</form>
+			</div>
+			<div id="AudioTab">
+				<form ng-show="tab.isSelected(4) && tab.activeTabs[3]" ng-repeat="audio in storage.audios">
+					<div style="float: left; margin-top:10px; margin-left:3.5%; width:17%; height: 70%; background-color:white; color:black" ng-click="expand.displayJSON(audio)" data-toggle="collapse" data-target="#main-div">{{audio["dcterms:title"]["@value"]}}</div>
+				</form>
+			</div>
+			<div id="SlidesTab">
+				<form ng-show="tab.isSelected(5) && tab.activeTabs[4]" ng-repeat="slide in storage.slides">
+					<div style="float: left; margin-top:10px; margin-left:3.5%; width:17%; height: 70%; background-color:white; color:black" ng-click="expand.displayJSON(slide)" data-toggle="collapse" data-target="#main-div">{{slide["dcterms:title"]["@value"]}}</div>
+				</form>
+			</div>
+			<div id="TableTab">
+				<form ng-show="tab.isSelected(6) && tab.activeTabs[5]" ng-repeat="table in storage.tables">
+					<div style="float: left; margin-top:10px; margin-left:3.5%; width:17%; height: 70%; background-color:white; color:black" ng-click="expand.displayJSON(table)" data-toggle="collapse" data-target="#main-div">{{table["dcterms:title"]["@value"]}}</div>
+				</form>
+			</div>
+			<div id="TextTab">
+			<div id="TextCarousel" class="carousel slide" data-ride="carousel" ng-show="tab.isSelected(7) && tab.activeTabs[6]">
+					<!-- Indicators -->
+					<!--<ol class="carousel-indicators">
+						<li data-target="#TextCarousel" data-slide-to="0" class="active"></li>
+						<li data-target="#TextCarousel" data-slide-to="1"></li>
+					</ol>-->
+
+					<!-- Wrapper for slides -->
+					<div class="carousel-inner" role="listbox" style="margin-left:10em; top:10px; width:90%">
+						<div class="item active">
+							<div style="float: left; margin-top:10px; margin-left:3.5%; width:17%; height: 70%; background-color:white; color:black" ng-click="expand.displayJSON(text)" data-toggle="collapse" data-target="#main-div">{{storage.texts[0]["dcterms:title"]["@value"]}}</div>
+							<div style="float: left; margin-top:10px; margin-left:3.5%; width:17%; height: 70%; background-color:white; color:black" ng-click="expand.displayJSON(text)" data-toggle="collapse" data-target="#main-div">{{storage.texts[1]["dcterms:title"]["@value"]}}</div>
+							<div style="float: left; margin-top:10px; margin-left:3.5%; width:17%; height: 70%; background-color:white; color:black" ng-click="expand.displayJSON(text)" data-toggle="collapse" data-target="#main-div">{{storage.texts[2]["dcterms:title"]["@value"]}}</div>
+							<div style="float: left; margin-top:10px; margin-left:3.5%; width:17%; height: 70%; background-color:white; color:black" ng-click="expand.displayJSON(text)" data-toggle="collapse" data-target="#main-div">{{storage.texts[3]["dcterms:title"]["@value"]}}</div>
+							<div style="float: left; margin-top:10px; margin-left:3.5%; width:17%; height: 70%; background-color:white; color:black" ng-click="expand.displayJSON(text)" data-toggle="collapse" data-target="#main-div">{{storage.texts[4]["dcterms:title"]["@value"]}}</div>
+						</div>
+
+						<div class="item">
+							<div style="float: left; margin-top:10px; margin-left:3.5%; width:17%; height: 70%; background-color:white; color:black" ng-click="expand.displayJSON(text)" data-toggle="collapse" data-target="#main-div">{{storage.texts[5]["dcterms:title"]["@value"]}}</div>
+							<div style="float: left; margin-top:10px; margin-left:3.5%; width:17%; height: 70%; background-color:white; color:black" ng-click="expand.displayJSON(text)" data-toggle="collapse" data-target="#main-div">{{storage.texts[6]["dcterms:title"]["@value"]}}</div>
+							<div style="float: left; margin-top:10px; margin-left:3.5%; width:17%; height: 70%; background-color:white; color:black" ng-click="expand.displayJSON(text)" data-toggle="collapse" data-target="#main-div">{{storage.texts[7]["dcterms:title"]["@value"]}}</div>
+							<div style="float: left; margin-top:10px; margin-left:3.5%; width:17%; height: 70%; background-color:white; color:black" ng-click="expand.displayJSON(text)" data-toggle="collapse" data-target="#main-div">{{storage.texts[8]["dcterms:title"]["@value"]}}</div>
+							<div style="float: left; margin-top:10px; margin-left:3.5%; width:17%; height: 70%; background-color:white; color:black" ng-click="expand.displayJSON(text)" data-toggle="collapse" data-target="#main-div">{{storage.texts[9]["dcterms:title"]["@value"]}}</div>
+						</div>
+					</div>
+
+					<!-- Left and right controls -->
+					<a class="left carousel-control" href="#TextCarousel" role="button" data-slide="prev" style="height: 120px; width:75px">
+						<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+						<span class="sr-only">Previous</span>
+					</a>
+					<a class="right carousel-control" href="#TextCarousel" role="button" data-slide="next" style="height: 120px; width:75px">
+						<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+						<span class="sr-only">Next</span>
+					</a>
+				</div>
+			</div>
+		</div>
+
+		<form style="margin: 0 auto; left: 10px; top: 50px; width: 98%;align: middle; background-color:#313192; visibility: visible">
+			<a class="tabs-nav-item" href="#FAQ" ng-style="tab.tabStyle[0]" ng-click="tab.selectTab(1);" ng-show="tab.activeTabs[0]">FAQ</a>
+			<a  class="tabs-nav-item" href="#code" ng-style="tab.tabStyle[1]" ng-click="tab.selectTab(2);" ng-show="tab.activeTabs[1]">Code</a>
+			<a  class="tabs-nav-item" href="#video" ng-style="tab.tabStyle[2]" ng-click="tab.selectTab(3);" ng-show="tab.activeTabs[2]">Video</a>
+			<a class="tabs-nav-item" href="#audio" ng-style="tab.tabStyle[3]" ng-click="tab.selectTab(4);" ng-show="tab.activeTabs[3]">Audio</a>
+			<a class="tabs-nav-item" href="#slides" ng-style="tab.tabStyle[4]" ng-click="tab.selectTab(5);"ng-show="tab.activeTabs[4]">Slides</a>
+			<a class="tabs-nav-item" href="#table" ng-style="tab.tabStyle[5]" ng-click="tab.selectTab(6);" ng-show="tab.activeTabs[5]">Table</a>
+			<a class="tabs-nav-item" href="#narrativeText" ng-style="tab.tabStyle[6]" ng-click="tab.selectTab(7);" ng-show="tab.activeTabs[6]">narrativ Text</a>
+		</form>
+
+	</div>
+	<div ng-controller="expandCtrl" class="container" id="main-div">
+		<table id="displayTable">
+		</table>
+	</div>
+	<footer class="footer" style="position:absolute; bottom: 0; height:40px; width: 100%; background-color: #f5f5f5">
+      <div class="container">
+        <p class="text-muted" style="margin:10px 0; text-align: center">created by: Johanna Lubian, Janine Polster, Pavlo Shevchenko &copy;</p>
+      </div>
+    </footer>
 
 </body>
 </html>
