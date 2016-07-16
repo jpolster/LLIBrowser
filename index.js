@@ -28,10 +28,23 @@ var button = ActionButton({
 */
 
 function showPlugIn(state){	
-  let currUrl = tabs.activeTab.url;
-  var file = "file:///home/urmikl18/Test/SoftwareProject/LLIStabil/data/overlay.html";
-  //var file = "http://www-e.uni-magdeburg.de/jpolster/LLIBrowser/overlay.html";
-  var completePath = file.concat("?url=").concat(currUrl);
+  // let currUrl = tabs.activeTab.url;
+  // var file = "file:///home/urmikl18/Test/SoftwareProject/LLIStabil/data/overlay.html";
+  // //var file = "http://www-e.uni-magdeburg.de/jpolster/LLIBrowser/overlay.html";
+  // //var file=data.url("overlay.html");
+  // //console.log(file);
+  // var completePath = file.concat("?url=").concat(currUrl);
 
-  tabs.open(completePath)
+  // tabs.open(completePath);
+
+  tabs.open({
+    url: data.url("overlay.html").concat("?url=").concat(tabs.activeTab.url.replace("://","PSZP//")),
+    inBackground: false,
+    onReady: function(tab)
+    {
+      tab.attach({
+        contentScriptFile: data.url("app.js")
+      });
+    }
+  });
 }

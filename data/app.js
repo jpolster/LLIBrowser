@@ -8,7 +8,7 @@
 	*@type angular.module
 	*@name llibrowser
 	*/
-	var app = angular.module('llibrowser', ['ngSanitize']);
+	var app = angular.module('llibrowser', ['ng','ngSanitize']);
 
 	/**
 	 *@name ServerCtrl
@@ -79,7 +79,7 @@
          */
          this.selectTab=function(setTab) {
              storage.tab=setTab;
-             for (i=0;i<7;i++)
+             for (var i=0;i<7;i++)
              {
                 if (i!=setTab-1)
                 {
@@ -120,7 +120,7 @@
     	 *@desc The current page URL
     	 */
         var page = unescape(temp[1]);
-
+        page=page.replace("PSZP//","://");
     	/**
     	 *@var oldURL
     	 *@desc The current value of URL for LLIDelivery
@@ -159,7 +159,9 @@
     	var pageURL="products.json";
     	$http.get(pageURL).success(function(data){
          console.log("Successful connection with server");
-         storage.llis=data;
+         storage.llis=data;											//server: storage.llis=new Array(data);
+         															//works for one llis
+         															//TODO: if works with many, probably not
          storage.faqs=storage.llis.filter(categoryFilter(FAQ));
          storage.codes=storage.llis.filter(categoryFilter(CODE));
          storage.videos=storage.llis.filter(categoryFilter(VIDEO));

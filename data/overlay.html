@@ -5,14 +5,13 @@
 	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
 	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="angular/angular.min.js"></script>
+	<script type="text/javascript" src="app.js"></script>
+	<script type="text/javascript" src="https://code.angularjs.org/1.5.5/angular-sanitize.js"></script>
 	<link rel="stylesheet" type="text/css" href="main.css"/>
 </head>
 
 <body ng-controller="ServerCtrl as storage">
-	<script type="text/javascript" src="lib/angular.min.js"></script>
-	<script type="text/javascript" src="app.js"></script>
-	<script type="text/javascript" src="https://code.angularjs.org/1.5.5/angular-sanitize.js"></script>
-
 	<form id="newPageForm" class="collapse" name="newPage" ng-submit="newPage.$valid && storage.setURL()" novalidate style="position:relative; clear:both; width:100%; background-color:#313192; color:black;">
 		<input ng-model="storage.newURL" type="url" placeholder="Insert new link for LLIs" required style="width:90%"/>
 		<input type="submit" value="Reload"/>
