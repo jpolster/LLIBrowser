@@ -4,8 +4,8 @@
 		"dictionaries" : ["jsdoc","closure"]
 	},
 	"source" : {
-		"include" : [ "data/scripts/app.js", "index.js" ],
-		"exclude" : [ "data/lib/angular.min.js" ]
+		"include" : [ "data/app.js", "index.js" ],
+		"exclude" : [ "data/angular/angular.min.js" ]
 	},
 	"opts" : {
 		"template" : "templates/default",

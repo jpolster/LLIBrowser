@@ -69,7 +69,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="data_scripts_app.js.html">data/scripts/app.js</a>, <a href="data_scripts_app.js.html#line1">line 1</a>
+        <a href="data_app.js.html">data/app.js</a>, <a href="data_app.js.html#line1">line 1</a>
     </li></ul></dd>
     
 
@@ -100,80 +100,13 @@
 
         
             
-<h4 class="name" id="~ACTIVE_TAB_STYLE"><span class="type-signature">(inner, constant) </span>ACTIVE_TAB_STYLE<span class="type-signature"></span></h4>
+<h4 class="name" id="~expandCtrl"><span class="type-signature">(inner) </span>expandCtrl<span class="type-signature"> :angular.controller</span></h4>
 
 
 
 
 <div class="description">
-    The background-color for the active tab
-</div>
-
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-default">Default Value:</dt>
-    <dd class="tag-default"><ul class="dummy">
-            <li>#75bbf7</li>
-        </ul></dd>
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="data_scripts_app.js.html">data/scripts/app.js</a>, <a href="data_scripts_app.js.html#line143">line 143</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-        
-            
-<h4 class="name" id="~activeTabs"><span class="type-signature">(inner) </span>activeTabs<span class="type-signature"> :Array.&lt;Boolean></span></h4>
-
-
-
-
-<div class="description">
-    Array connected to the checkboxes in overlay.html
+    Controller that shows content of a single LLI in a table
 </div>
 
 
@@ -182,7 +115,7 @@
     <ul>
         <li>
             
-<span class="param-type">Array.&lt;Boolean></span>
+<span class="param-type">angular.controller</span>
 
 
         </li>
@@ -192,6 +125,58 @@
 
 
 
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+
+<table class="props">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>table</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The table "displayTable" from overlay.html</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
 <dl class="details">
 
     
@@ -217,16 +202,11 @@
     
 
     
-    <dt class="tag-default">Default Value:</dt>
-    <dd class="tag-default"><ul class="dummy">
-            <li>activeTabs[i]=true</li>
-        </ul></dd>
-    
 
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="data_scripts_app.js.html">data/scripts/app.js</a>, <a href="data_scripts_app.js.html#line56">line 56</a>
+        <a href="data_app.js.html">data/app.js</a>, <a href="data_app.js.html#line216">line 216</a>
     </li></ul></dd>
     
 
@@ -294,7 +274,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="data_scripts_app.js.html">data/scripts/app.js</a>, <a href="data_scripts_app.js.html#line6">line 6</a>
+        <a href="data_app.js.html">data/app.js</a>, <a href="data_app.js.html#line6">line 6</a>
     </li></ul></dd>
     
 
@@ -312,13 +292,13 @@
 
         
             
-<h4 class="name" id="~newPageCtrl"><span class="type-signature">(inner) </span>newPageCtrl<span class="type-signature"> :angular.controller</span></h4>
+<h4 class="name" id="~ServerCtrl"><span class="type-signature">(inner) </span>ServerCtrl<span class="type-signature"> :angular.controller</span></h4>
 
 
 
 
 <div class="description">
-    Controller that allows user to refresh add-on with new URL
+    Controller that enables fetching .json from server and configuring the add-on page
 </div>
 
 
@@ -337,394 +317,307 @@
 
 
 
-<dl class="details">
+    <h5 class="subsection-title">Properties:</h5>
 
     
 
-    
+<table class="props">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
 
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="data_scripts_app.js.html">data/scripts/app.js</a>, <a href="data_scripts_app.js.html#line97">line 97</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
+        <th>Type</th>
 
         
-            
-<h4 class="name" id="~newURL"><span class="type-signature">(inner) </span>newURL<span class="type-signature"></span></h4>
-
-
-
-
-<div class="description">
-    The new value of URL for LLIDelivery
-</div>
-
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-default">Default Value:</dt>
-    <dd class="tag-default"><ul class="dummy">
-            <li>""</li>
-        </ul></dd>
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="data_scripts_app.js.html">data/scripts/app.js</a>, <a href="data_scripts_app.js.html#line126">line 126</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
 
         
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
             
-<h4 class="name" id="~NONACTIVE_TAB_STYLE"><span class="type-signature">(inner, constant) </span>NONACTIVE_TAB_STYLE<span class="type-signature"></span></h4>
-
-
-
-
-<div class="description">
-    The background-color for the non-active tab
-</div>
-
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-default">Default Value:</dt>
-    <dd class="tag-default"><ul class="dummy">
-            <li>#313192</li>
-        </ul></dd>
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="data_scripts_app.js.html">data/scripts/app.js</a>, <a href="data_scripts_app.js.html#line149">line 149</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-        
+                <td class="name"><code>activeTabs</code></td>
             
-<h4 class="name" id="~oldURL"><span class="type-signature">(inner) </span>oldURL<span class="type-signature"></span></h4>
 
-
-
-
-<div class="description">
-    The current value of URL for LLIDelivery
-</div>
-
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="data_scripts_app.js.html">data/scripts/app.js</a>, <a href="data_scripts_app.js.html#line120">line 120</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-        
+            <td class="type">
             
-<h4 class="name" id="~page"><span class="type-signature">(inner) </span>page<span class="type-signature"></span></h4>
+                
+<span class="param-type">Array.&lt;Boolean></span>
 
 
-
-
-<div class="description">
-    The current page URL
-</div>
-
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="data_scripts_app.js.html">data/scripts/app.js</a>, <a href="data_scripts_app.js.html#line114">line 114</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-        
             
-<h4 class="name" id="~parameters"><span class="type-signature">(inner) </span>parameters<span class="type-signature"></span></h4>
+            </td>
 
-
-
-
-<div class="description">
-    Extracted parameters from the address
-</div>
-
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="data_scripts_app.js.html">data/scripts/app.js</a>, <a href="data_scripts_app.js.html#line103">line 103</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-        
             
-<h4 class="name" id="~tab"><span class="type-signature">(inner) </span>tab<span class="type-signature"> :Integer</span></h4>
 
-
-
-
-<div class="description">
-    Value of a current tab
-</div>
-
-
-
-    <h5>Type:</h5>
-    <ul>
-        <li>
             
+
+            <td class="description last">ng-binding to the checkboxes</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>tab</code></td>
+            
+
+            <td class="type">
+            
+                
 <span class="param-type">Integer</span>
 
 
-        </li>
-    </ul>
+            
+            </td>
 
+            
+
+            
+
+            <td class="description last">The initial value of active tab</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>tabStyle</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array.&lt;Object></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Contains styles for the tabs</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>llis</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array.&lt;Object></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The storage for data from server</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>faqs</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array.&lt;Object></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The array of llis that belong to category FAQ</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>codes</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array.&lt;Object></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The array of llis that belong to category CODE</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>videos</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array.&lt;Object></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The array of llis that belong to category VIDEO</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>audios</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array.&lt;Object></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The array of llis that belong to category AUDIO</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>slides</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array.&lt;Object></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The array of llis that belong to category SLIDES</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>tables</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array.&lt;Object></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The array of llis that belong to category TABLE</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>texts</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array.&lt;Object></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The array of llis that belong to category NARRATIVE_TEXT</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>index</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array.&lt;Integer></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The array of current first llis in gallery</td>
+        </tr>
+
+    
+    </tbody>
+</table>
 
 
 
@@ -754,227 +647,11 @@
     
 
     
-    <dt class="tag-default">Default Value:</dt>
-    <dd class="tag-default"><ul class="dummy">
-            <li>1</li>
-        </ul></dd>
-    
 
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="data_scripts_app.js.html">data/scripts/app.js</a>, <a href="data_scripts_app.js.html#line19">line 19</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-        
-            
-<h4 class="name" id="~TabCtrl"><span class="type-signature">(inner) </span>TabCtrl<span class="type-signature"> :angular.controller</span></h4>
-
-
-
-
-<div class="description">
-    Controller to perform tabs functionality
-</div>
-
-
-
-    <h5>Type:</h5>
-    <ul>
-        <li>
-            
-<span class="param-type">angular.controller</span>
-
-
-        </li>
-    </ul>
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="data_scripts_app.js.html">data/scripts/app.js</a>, <a href="data_scripts_app.js.html#line13">line 13</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-        
-            
-<h4 class="name" id="~tabStyle"><span class="type-signature">(inner) </span>tabStyle<span class="type-signature"> :Array.&lt;String></span></h4>
-
-
-
-
-<div class="description">
-    Style values of the tabs
-</div>
-
-
-
-    <h5>Type:</h5>
-    <ul>
-        <li>
-            
-<span class="param-type">Array.&lt;String></span>
-
-
-        </li>
-    </ul>
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-default">Default Value:</dt>
-    <dd class="tag-default"><ul class="dummy">
-            <li>tabStyle[1]=ACTIVE_TAB_STYLE</li>
-        </ul></dd>
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="data_scripts_app.js.html">data/scripts/app.js</a>, <a href="data_scripts_app.js.html#line27">line 27</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-        
-            
-<h4 class="name" id="~temp"><span class="type-signature">(inner) </span>temp<span class="type-signature"></span></h4>
-
-
-
-
-<div class="description">
-    First parameter of parameters
-</div>
-
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="data_scripts_app.js.html">data/scripts/app.js</a>, <a href="data_scripts_app.js.html#line109">line 109</a>
+        <a href="data_app.js.html">data/app.js</a>, <a href="data_app.js.html#line13">line 13</a>
     </li></ul></dd>
     
 
@@ -995,6 +672,225 @@
 
     
         <h3 class="subsection-title">Methods</h3>
+
+        
+            
+
+    
+
+    <h4 class="name" id="~categoryFilter"><span class="type-signature">(inner) </span>categoryFilter<span class="signature">(cat)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>cat</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The category for the filter (FAQ,CODE,VIDEO,AUDIO,SLIDES,TABLE,NARRATIVE_TEXT)</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="data_app.js.html">data/app.js</a>, <a href="data_app.js.html#line100">line 100</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    function that returns true if the lli belongs to cat
+</div>
+
+
+
+    
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="~formLLIS"><span class="type-signature">(inner) </span>formLLIS<span class="signature">()</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+<div class="description">
+    filters the llis, defines which tabs should be shown and activates the first tab with content
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="data_app.js.html">data/app.js</a>, <a href="data_app.js.html#line122">line 122</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         
             
@@ -1056,7 +952,7 @@
 
             
 
-            <td class="description last"></td>
+            <td class="description last">the number of tab to be checked</td>
         </tr>
 
     
@@ -1097,7 +993,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="data_scripts_app.js.html">data/scripts/app.js</a>, <a href="data_scripts_app.js.html#line87">line 87</a>
+        <a href="data_app.js.html">data/app.js</a>, <a href="data_app.js.html#line81">line 81</a>
     </li></ul></dd>
     
 
@@ -1138,11 +1034,202 @@
 
     
 
+    <h4 class="name" id="~moveIndex"><span class="type-signature">(inner) </span>moveIndex<span class="signature">(oldValue, step, upbound)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+<div class="description">
+    Shifts the index and checks if the upper- and lower-bounds are not broken
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>oldValue</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Integer</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The current value of the index</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>step</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Integer</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The step to change the current index</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>upbound</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Integer</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The upperbound that cannot be broken (usually size of array)</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="data_app.js.html">data/app.js</a>, <a href="data_app.js.html#line153">line 153</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    the new index
+</div>
+
+
+
+    
+
+
+
+        
+            
+
+    
+
     <h4 class="name" id="~selectTab"><span class="type-signature">(inner) </span>selectTab<span class="signature">(setTab)</span><span class="type-signature"></span></h4>
 
     
 
 
+
+<div class="description">
+    Sets the tab=setTab and changes the tabs' style
+</div>
 
 
 
@@ -1193,7 +1280,7 @@
 
             
 
-            <td class="description last"></td>
+            <td class="description last">the number of tab to be activated</td>
         </tr>
 
     
@@ -1234,7 +1321,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="data_scripts_app.js.html">data/scripts/app.js</a>, <a href="data_scripts_app.js.html#line64">line 64</a>
+        <a href="data_app.js.html">data/app.js</a>, <a href="data_app.js.html#line58">line 58</a>
     </li></ul></dd>
     
 
@@ -1257,16 +1344,6 @@
 
 
 
-<h5>Returns:</h5>
-
-        
-<div class="param-desc">
-    Sets the tab=setTab and changes the tabs' style
-</div>
-
-
-
-    
 
 
 
@@ -1280,6 +1357,10 @@
     
 
 
+
+<div class="description">
+    Sets oldURL as newURL and resets the value of newURL
+</div>
 
 
 
@@ -1322,7 +1403,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="data_scripts_app.js.html">data/scripts/app.js</a>, <a href="data_scripts_app.js.html#line132">line 132</a>
+        <a href="data_app.js.html">data/app.js</a>, <a href="data_app.js.html#line192">line 192</a>
     </li></ul></dd>
     
 
@@ -1345,16 +1426,6 @@
 
 
 
-<h5>Returns:</h5>
-
-        
-<div class="param-desc">
-    Sets oldURL as newURL and resets the value of newURL
-</div>
-
-
-
-    
 
 
 
@@ -1380,7 +1451,7 @@
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.0</a> on Fri Jun 10 2016 13:16:06 GMT+0200 (CEST)
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.0</a> on Sun Jul 17 2016 12:27:21 GMT+0200 (CEST)
 </footer>
 
 <script> prettyPrint(); </script>
