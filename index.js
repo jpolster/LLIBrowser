@@ -5,7 +5,7 @@
 
 var { ActionButton } = require("sdk/ui/button/action");
 var tabs = require("sdk/tabs");
-var data = require("sdk/self").data; 
+var data = require("sdk/self").data;
 
 /**
  *@var button
@@ -37,7 +37,19 @@ function showPlugIn(state){
 
   // tabs.open(completePath);
 
-  tabs.open({
+  if (tabs.activeTab.url == "about:blank" || tabs.activeTab.url == "about:newtab")
+  {tabs.open({
+    url: data.url("overlay.html").concat("?url=").concat(data.url("dummy.html").replace("://","PSZP//")),
+    inBackground: false,
+    onReady: function(tab)
+    {
+      tab.attach({
+        contentScriptFile: data.url("app.js")
+      });
+    }
+  }); 
+}     
+  else {tabs.open({
     url: data.url("overlay.html").concat("?url=").concat(tabs.activeTab.url.replace("://","PSZP//")),
     inBackground: false,
     onReady: function(tab)
@@ -47,4 +59,5 @@ function showPlugIn(state){
       });
     }
   });
+}
 }

@@ -12,6 +12,11 @@
 </head>
 
 <body ng-controller="ServerCtrl as storage">
+
+	<div ng-show="storage.oldURL.search('resource%3A%2F%2Fllibrowser%2Fdata%2Fdummy.html') != -1" class="alert alert-danger">
+	<strong>Error!</strong> You cannot open LLIBrowser with an empty page. This is a demonstration of the work with an example page "dummy.html"
+	</div>
+
 	<form id="newPageForm" class="collapse" name="newPage" ng-submit="newPage.$valid && storage.setURL()" novalidate style="position:relative; clear:both; width:100%; background-color:#313192; color:black;">
 		<input ng-model="storage.newURL" type="url" placeholder="Insert new link for LLIs" required style="width:90%"/>
 		<input type="submit" value="Reload"/>
@@ -26,8 +31,8 @@
 	</form>
 
 	<div class="alert alert-info">
-			<strong>Info!</strong> The current LLIs refer to this URL: {{storage.oldURL}}
-		</div>
+		<strong>Info!</strong> The current LLIs refer to this URL: {{storage.oldURL}}
+	</div>
 
 	<div class="div-masthead">
 
