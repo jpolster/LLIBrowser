@@ -66,17 +66,19 @@ app.controller('ServerCtrl',['$http', function($http) {
          {
             if (i!=setTab-1)
             {
-               storage.tabStyle[i] = {
-                  'background': NONACTIVE_TAB_STYLE
-              };
-          }
-          else {
-            storage.tabStyle[setTab-1] = {
-               'background' : ACTIVE_TAB_STYLE
-           };
-       }
-   }
-};
+                storage.tabStyle[i] = {
+                    'background' : NONACTIVE_TAB_STYLE,
+                    'color': WHITE
+                };
+            }
+            else {
+                storage.tabStyle[setTab-1] = {
+                    'background' : ACTIVE_TAB_STYLE,
+                    'color': COLOR_ACTIVE_TAB_STYLE
+                };
+            }
+        }
+    };
 
     /**
      *@function isSelected
@@ -250,8 +252,10 @@ this.oldURL = encodeURIComponent(page);
     };
 }]);
 
- const ACTIVE_TAB_STYLE='#75bbf7';
- const NONACTIVE_TAB_STYLE='#313192';
+ const ACTIVE_TAB_STYLE='#95caf7';
+ const NONACTIVE_TAB_STYLE='rgb(73, 61, 191)';
+ const WHITE='#ffffff';
+ const COLOR_ACTIVE_TAB_STYLE='#387090'
  const FAQ='faq';
  const CODE='code';
  const VIDEO='video';
