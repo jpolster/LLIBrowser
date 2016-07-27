@@ -3,7 +3,6 @@
 
 <head>
 	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
 	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="angular/angular.min.js"></script>
 	<script type="text/javascript" src="app.js"></script>
@@ -13,7 +12,7 @@
 
 <body ng-controller="ServerCtrl as storage">
 
-	<div ng-show="storage.oldURL.search('resource%3A%2F%2Fllibrowser%2Fdata%2Fdummy.html') != -1" class="alert alert-danger">
+	<div ng-show="storage.oldURL.search('resource%3A%2F%2Fllibrowser%2Fdata%2Fdummy.html') != -1" class="alert alert-danger" style="padding: 8px; margin-bottom: 0px; border:solid">
 		<strong>Error!</strong> You cannot open LLIBrowser with an empty page. This is a demonstration of the work with an example page "dummy.html"
 	</div>
 
@@ -159,13 +158,13 @@
 
 					<div style="float: left; margin-top:25px; margin-left:6%; width:10%; height: 70px; background-color:white; color:black" ng-show="storage.texts.length-storage.index[6]>=1" ng-click="expand.displayJSON(storage.texts[storage.index[6]+0])" data-toggle="collapse" data-target="#main-div">{{storage.texts[storage.index[6]+0]["dcterms:title"]["@value"]}}</div>
 
-					<div style="float: left; margin-top:25px; margin-left:6%; width:10%; height: 70px; background-color:white; color:black" ng-show="storage.texts.length-storage.index[6]>=1" ng-click="expand.displayJSON(storage.texts[storage.index[6]+0])" data-toggle="collapse" data-target="#main-div">{{storage.texts[storage.index[6]+1]["dcterms:title"]["@value"]}}</div>
+					<div style="float: left; margin-top:25px; margin-left:6%; width:10%; height: 70px; background-color:white; color:black" ng-show="storage.texts.length-storage.index[6]>=2" ng-click="expand.displayJSON(storage.texts[storage.index[6]+0])" data-toggle="collapse" data-target="#main-div">{{storage.texts[storage.index[6]+1]["dcterms:title"]["@value"]}}</div>
 
-					<div style="float: left; margin-top:25px; margin-left:6%; width:10%; height: 70px; background-color:white; color:black" ng-show="storage.texts.length-storage.index[6]>=1" ng-click="expand.displayJSON(storage.texts[storage.index[6]+0])" data-toggle="collapse" data-target="#main-div">{{storage.texts[storage.index[6]+2]["dcterms:title"]["@value"]}}</div>
+					<div style="float: left; margin-top:25px; margin-left:6%; width:10%; height: 70px; background-color:white; color:black" ng-show="storage.texts.length-storage.index[6]>=3" ng-click="expand.displayJSON(storage.texts[storage.index[6]+0])" data-toggle="collapse" data-target="#main-div">{{storage.texts[storage.index[6]+2]["dcterms:title"]["@value"]}}</div>
 
-					<div style="float: left; margin-top:25px; margin-left:6%; width:10%; height: 70px; background-color:white; color:black" ng-show="storage.texts.length-storage.index[6]>=1" ng-click="expand.displayJSON(storage.texts[storage.index[6]+0])" data-toggle="collapse" data-target="#main-div">{{storage.texts[storage.index[6]+3]["dcterms:title"]["@value"]}}</div>
+					<div style="float: left; margin-top:25px; margin-left:6%; width:10%; height: 70px; background-color:white; color:black" ng-show="storage.texts.length-storage.index[6]>=4" ng-click="expand.displayJSON(storage.texts[storage.index[6]+0])" data-toggle="collapse" data-target="#main-div">{{storage.texts[storage.index[6]+3]["dcterms:title"]["@value"]}}</div>
 
-					<div style="float: left; margin-top:25px; margin-left:6%; width:10%; height: 70px; background-color:white; color:black" ng-show="storage.texts.length-storage.index[6]>=1" ng-click="expand.displayJSON(storage.texts[storage.index[6]+0])" data-toggle="collapse" data-target="#main-div">{{storage.texts[storage.index[6]+4]["dcterms:title"]["@value"]}}</div>
+					<div style="float: left; margin-top:25px; margin-left:6%; width:10%; height: 70px; background-color:white; color:black" ng-show="storage.texts.length-storage.index[6]>=5" ng-click="expand.displayJSON(storage.texts[storage.index[6]+0])" data-toggle="collapse" data-target="#main-div">{{storage.texts[storage.index[6]+4]["dcterms:title"]["@value"]}}</div>
 
 					<div style="float: right; margin-top:45px; margin-right:5%" ng-show="storage.index[6]+5<storage.texts.length" ng-click="storage.index[6]=storage.moveIndex(storage.index[6],5,storage.texts.length)"><span style="font-size:1.8em;" class="glyphicon glyphicon-circle-arrow-right"></span></div>
 				</form>
