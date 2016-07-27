@@ -3,6 +3,7 @@
 
 <head>
 	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
 	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="angular/angular.min.js"></script>
 	<script type="text/javascript" src="app.js"></script>
@@ -13,11 +14,11 @@
 <body ng-controller="ServerCtrl as storage">
 
 	<div ng-show="storage.oldURL.search('resource%3A%2F%2Fllibrowser%2Fdata%2Fdummy.html') != -1" class="alert alert-danger" style="padding: 8px; margin-bottom: 0px; border:solid">
-		<strong>Error!</strong> You cannot open LLIBrowser with an empty page. This is a demonstration of the work with an example page "dummy.html"
+		<strong>Error!</strong> You cannot open LLIBrowser with a not valid page. Valid pages are http(s)://page.domain/other/. This is a demonstration of the work with an example page "dummy.html"
 	</div>
 
 	<form id="newPageForm" class="collapse" name="newPage" ng-submit="newPage.$valid && storage.setURL()" novalidate style="position:relative; clear:both; width:100%; background-color:#d9edf7; color:black;">
-		<input ng-model="storage.newURL" type="url" placeholder="Insert new link for LLIs" required style="width:90%"/>
+		<input ng-model="storage.newURL" ng-pattern="storage.HTTP_REGEX" placeholder="Insert new link for LLIs" required style="width:90%"/>
 		<button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-refresh">&nbsp;Reload</span></button>
 
 

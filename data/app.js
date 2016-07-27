@@ -212,6 +212,8 @@ this.oldURL = encodeURIComponent(page);
            console.log("Connection with server failed");
        });
     };
+
+    this.HTTP_REGEX = /^(https?:\/\/)?([\w\.]+)\.([a-z]{2,6}\.?)(\/[\w\.]*)*\/?$/;
 }]);
 
 
@@ -255,7 +257,8 @@ this.oldURL = encodeURIComponent(page);
  const ACTIVE_TAB_STYLE='#95caf7';
  const NONACTIVE_TAB_STYLE='rgb(73, 61, 191)';
  const WHITE='#ffffff';
- const COLOR_ACTIVE_TAB_STYLE='#387090'
+ const COLOR_ACTIVE_TAB_STYLE='#387090';
+
  const FAQ='faq';
  const CODE='code';
  const VIDEO='video';

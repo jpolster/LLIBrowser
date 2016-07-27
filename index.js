@@ -9,6 +9,7 @@
  var { ActionButton } = require("sdk/ui/button/action");
  var tabs = require("sdk/tabs");
  var data = require("sdk/self").data;
+ const HTTP_REGEX = /^(https?:\/\/)?([\w\.]+)\.([a-z]{2,6}\.?)(\/[\w\.]*)*\/?$/;
 
 /**
  *@var button
@@ -35,7 +36,7 @@
   //var file = "http://www-e.uni-magdeburg.de/jpolster/LLIBrowser/overlay.html";
   
   var currURL = "";
-  if (tabs.activeTab.url == "about:blank" || tabs.activeTab.url == "about:newtab")
+  if (!HTTP_REGEX.test(tabs.activeTab.url))
     currURL=data.url("dummy.html").replace("://","PSZP//");
   else
     currURL=tabs.activeTab.url.replace("://","PSZP//");
