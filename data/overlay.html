@@ -13,14 +13,13 @@
 
 <body ng-controller="ServerCtrl as storage">
 
-	<div ng-show="storage.oldURL.search('resource%3A%2F%2Fllibrowser%2Fdata%2Fdummy.html') != -1" class="alert alert-danger">
+	<div ng-show="storage.oldURL.search('resource%3A%2F%2Fllibrowser%2Fdata%2Fdummy.html') != -1" class="alert alert-danger" style="padding: 8px; margin-bottom: 0px">
 		<strong>Error!</strong> You cannot open LLIBrowser with an empty page. This is a demonstration of the work with an example page "dummy.html"
 	</div>
 
 	<form id="newPageForm" class="collapse" name="newPage" ng-submit="newPage.$valid && storage.setURL()" novalidate style="position:relative; clear:both; width:100%; background-color:#d9edf7; color:black;">
 		<input ng-model="storage.newURL" type="url" placeholder="Insert new link for LLIs" required style="width:90%"/>
 		<button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-refresh">&nbsp;Reload</span></button>
-
 
 		<div ng-show="newPage.$valid" class="alert alert-success" style="padding: 8px; margin-bottom: 0px; border:solid">
 			<strong>Success!</strong> Ready to reload the page with {{storage.newURL}}. Click "Reload"
@@ -54,7 +53,7 @@
 		<div style="margin-left: 01%; margin-top:20px; left: 10px; top: 70px; width: 98%; height: 50%; align: middle; background-color:#95caf7; visibility: visible" ng-controller="expandCtrl as expand">
 			<div id="FAQTab">
 				<form ng-show="storage.isSelected(1) && storage.activeTabs[0]">
-					<div style="float: left; margin-top:25px; margin-left:5%" ng-show="storage.index[0]>0" ng-click="storage.index[0]=storage.moveIndex(storage.index[0],-5,storage.faqs.length)"><span style="font-size:1.8em;" class="glyphicon glyphicon-circle-arrow-left"></span></div>
+					<div style="float: left; margin-top:25px; margin-left:5%" ng-show="storage.index[0]>0" ng-click="storage.index[0]=storage.moveIndex(storage.index[0],-5,storage.faqs.length)"><span style="font-size:1.8em;" class="glyphicon glyphicon-circle-arrow-left" title="Show previous LLI"></span></div>
 
 					<div style="float: left; margin-top:25px; margin-left:6%; width:10%; height: 70px; background-color:white; color:black" ng-show="storage.faqs.length-storage.index[0]>=1" ng-click="expand.displayJSON(storage.faqs[storage.index[0]])" data-toggle="collapse" data-target="#main-div">{{storage.faqs[storage.index[0]+0]["dcterms:title"]["@value"]}}</div>
 
@@ -66,12 +65,12 @@
 
 					<div style="float: left; margin-top:25px; margin-left:6%; width:10%; height: 70px; background-color:white; color:black" ng-show="storage.faqs.length-storage.index[0]>=5" ng-click="expand.displayJSON(storage.faqs[storage.index[0]+4])" data-toggle="collapse" data-target="#main-div">{{storage.faqs[storage.index[0]+4]["dcterms:title"]["@value"]}}</div>
 
-					<div style="float: right; margin-top:45px; margin-right:5%" ng-show="storage.index[0]+5<storage.faqs.length" ng-click="storage.index[0]=storage.moveIndex(storage.index[0],5,storage.faqs.length)"><span style="font-size:1.8em;" class="glyphicon glyphicon-circle-arrow-right"></span></div>
+					<div style="float: right; margin-top:45px; margin-right:5%" ng-show="storage.index[0]+5<storage.faqs.length" ng-click="storage.index[0]=storage.moveIndex(storage.index[0],5,storage.faqs.length)"><span style="font-size:1.8em;" class="glyphicon glyphicon-circle-arrow-right" title="Show next LLI"></span></div>
 				</form>
 			</div>
 			<div id="CodeTab">
 				<form ng-show="storage.isSelected(2) && storage.activeTabs[1]">
-					<div style="float: left; margin-top:45px; margin-left:5%" ng-show="storage.index[1]>0" ng-click="storage.index[1]=storage.moveIndex(storage.index[1],-5,storage.codes.length)"><span style="font-size:1.8em;" class="glyphicon glyphicon-circle-arrow-left"></span></div>
+					<div style="float: left; margin-top:45px; margin-left:5%" ng-show="storage.index[1]>0" ng-click="storage.index[1]=storage.moveIndex(storage.index[1],-5,storage.codes.length)"><span style="font-size:1.8em;" class="glyphicon glyphicon-circle-arrow-left" title="Show previous LLI"></span></div>
 
 					<div style="float: left; margin-top:25px; margin-left:6%; width:10%; height: 70px; background-color:white; color:black" ng-show="storage.codes.length-storage.index[1]>=1" ng-click="expand.displayJSON(storage.codes[storage.index[1]])" data-toggle="collapse" data-target="#main-div">{{storage.cods[storage.index[1]+0]["dcterms:title"]["@value"]}}</div>
 
@@ -83,12 +82,12 @@
 
 					<div style="float: left; margin-top:25px; margin-left:6%; width:10%; height: 70px; background-color:white; color:black" ng-show="storage.codes.length-storage.index[1]>=5" ng-click="expand.displayJSON(storage.codes[storage.index[1]+4])" data-toggle="collapse" data-target="#main-div">{{storage.codes[storage.index[1]+4]["dcterms:title"]["@value"]}}</div>
 
-					<div style="float: right; margin-top:45px; margin-right:5%" ng-show="storage.index[1]+5<storage.codes.length" ng-click="storage.index[1]=storage.moveIndex(storage.index[1],5,storage.codes.length)"><span style="font-size:1.8em;" class="glyphicon glyphicon-circle-arrow-right"></span></div>
+					<div style="float: right; margin-top:45px; margin-right:5%" ng-show="storage.index[1]+5<storage.codes.length" ng-click="storage.index[1]=storage.moveIndex(storage.index[1],5,storage.codes.length)"><span style="font-size:1.8em;" class="glyphicon glyphicon-circle-arrow-right" title="Show next LLI"></span></div>
 				</form>
 			</div>
 			<div id="VideoTab">
 				<form ng-show="storage.isSelected(3) && storage.activeTabs[2]">
-					<div style="float: left; margin-top:45px; margin-left:5%" ng-show="storage.index[2]>0" ng-click="storage.index[2]=storage.moveIndex(storage.index[2],-5,storage.videos.length)"><span style="font-size:1.8em;" class="glyphicon glyphicon-circle-arrow-left"></span></div>
+					<div style="float: left; margin-top:45px; margin-left:5%" ng-show="storage.index[2]>0" ng-click="storage.index[2]=storage.moveIndex(storage.index[2],-5,storage.videos.length)"><span style="font-size:1.8em;" class="glyphicon glyphicon-circle-arrow-left" title="Show previous LLI"></span></div>
 
 					<div style="float: left; margin-top:25px; margin-left:6%; width:10%; height: 70px; background-color:white; color:black" ng-show="storage.videos.length-storage.index[2]>=1" ng-click="expand.displayJSON(storage.videos[storage.index[2]+0])" data-toggle="collapse" data-target="#main-div">{{storage.videos[storage.index[2]+0]["dcterms:title"]["@value"]}}</div>
 
@@ -100,12 +99,12 @@
 
 					<div style="float: left; margin-top:25px; margin-left:6%; width:10%; height: 70px; background-color:white; color:black" ng-show="storage.videos.length-storage.index[2]>=5" ng-click="expand.displayJSON(storage.videos[storage.index[2]+4])" data-toggle="collapse" data-target="#main-div">{{storage.videos[storage.index[2]+4]["dcterms:title"]["@value"]}}</div>
 
-					<div style="float: right; margin-top:45px; margin-right:5%" ng-show="storage.index[2]+5<storage.videos.length" ng-click="storage.index[2]=storage.moveIndex(storage.index[2],5,storage.videos.length)"><span style="font-size:1.8em;" class="glyphicon glyphicon-circle-arrow-right"></span></div>
+					<div style="float: right; margin-top:45px; margin-right:5%" ng-show="storage.index[2]+5<storage.videos.length" ng-click="storage.index[2]=storage.moveIndex(storage.index[2],5,storage.videos.length)"><span style="font-size:1.8em;" class="glyphicon glyphicon-circle-arrow-right" title="Show next LLI"></span></div>
 				</form>
 			</div>
 			<div id="AudioTab">
 				<form ng-show="storage.isSelected(4) && storage.activeTabs[3]">
-					<div style="float: left; margin-top:45px; margin-left:5%" ng-show="storage.index[3]>0" ng-click="storage.index[3]=storage.moveIndex(storage.index[3],-5,storage.audios.length)"><span style="font-size:1.8em;" class="glyphicon glyphicon-circle-arrow-left"></span></div>
+					<div style="float: left; margin-top:45px; margin-left:5%" ng-show="storage.index[3]>0" ng-click="storage.index[3]=storage.moveIndex(storage.index[3],-5,storage.audios.length)"><span style="font-size:1.8em;" class="glyphicon glyphicon-circle-arrow-left" title="Show previous LLI"></span></div>
 
 					<div style="float: left; margin-top:25px; margin-left:6%; width:10%; height: 70px; background-color:white; color:black" ng-show="storage.audios.length-storage.index[3]>=1" ng-click="expand.displayJSON(storage.audios[storage.index[3]+0])" data-toggle="collapse" data-target="#main-div">{{storage.audios[storage.index[3]+0]["dcterms:title"]["@value"]}}</div>
 
@@ -117,12 +116,12 @@
 
 					<div style="float: left; margin-top:25px; margin-left:6%; width:10%; height: 70px; background-color:white; color:black" ng-show="storage.audios.length-storage.index[3]>=5" ng-click="expand.displayJSON(storage.audios[storage.index[3]+4])" data-toggle="collapse" data-target="#main-div">{{storage.audios[storage.index[3]+4]["dcterms:title"]["@value"]}}</div>
 
-					<div style="float: right; margin-top:45px; margin-right:5%" ng-show="storage.index[3]+5<storage.audios.length" ng-click="storage.index[3]=storage.moveIndex(storage.index[3],5,storage.audios.length)"><span style="font-size:1.8em;" class="glyphicon glyphicon-circle-arrow-right"></span></div>
+					<div style="float: right; margin-top:45px; margin-right:5%" ng-show="storage.index[3]+5<storage.audios.length" ng-click="storage.index[3]=storage.moveIndex(storage.index[3],5,storage.audios.length)"><span style="font-size:1.8em;" class="glyphicon glyphicon-circle-arrow-right" title="Show next LLI"></span></div>
 				</form>
 			</div>
 			<div id="SlidesTab">
 				<form ng-show="storage.isSelected(5) && storage.activeTabs[4]">
-					<div style="float: left; margin-top:45px; margin-left:5%" ng-show="storage.index[4]>0" ng-click="storage.index[4]=storage.moveIndex(storage.index[4],-5,storage.slides.length)"><span style="font-size:1.8em;" class="glyphicon glyphicon-circle-arrow-left"></span></div>
+					<div style="float: left; margin-top:45px; margin-left:5%" ng-show="storage.index[4]>0" ng-click="storage.index[4]=storage.moveIndex(storage.index[4],-5,storage.slides.length)"><span style="font-size:1.8em;" class="glyphicon glyphicon-circle-arrow-left" title="Show previous LLI"></span></div>
 
 					<div style="float: left; margin-top:25px; margin-left:6%; width:10%; height: 70px; background-color:white; color:black" ng-show="storage.slides.length-storage.index[4]>=1" ng-click="expand.displayJSON(storage.slides[storage.index[4]+0])" data-toggle="collapse" data-target="#main-div">{{storage.slides[storage.index[4]+0]["dcterms:title"]["@value"]}}</div>
 
@@ -133,12 +132,12 @@
 					<div style="float: left; margin-top:25px; margin-left:6%; width:10%; height: 70px; background-color:white; color:black" ng-show="storage.slides.length-storage.index[4]>=4" ng-click="expand.displayJSON(storage.slides[storage.index[4]+3])" data-toggle="collapse" data-target="#main-div">{{storage.slides[storage.index[4]+3]["dcterms:title"]["@value"]}}</div>
 
 					<div style="float: left; margin-top:25px; margin-left:6%; width:10%; height: 70px; background-color:white; color:black" ng-show="storage.slides.length-storage.index[4]>=5" ng-click="expand.displayJSON(storage.slides[storage.index[4]+4])" data-toggle="collapse" data-target="#main-div">{{storage.slides[storage.index[4]+4]["dcterms:title"]["@value"]}}</div>
-					<div style="float: right; margin-top:45px; margin-right:5%" ng-show="storage.index[4]+5<storage.slides.length" ng-click="storage.index[4]=storage.moveIndex(storage.index[4],5,storage.slides.length)"><span style="font-size:1.8em;" class="glyphicon glyphicon-circle-arrow-right"></span></div>
+					<div style="float: right; margin-top:45px; margin-right:5%" ng-show="storage.index[4]+5<storage.slides.length" ng-click="storage.index[4]=storage.moveIndex(storage.index[4],5,storage.slides.length)"><span style="font-size:1.8em;" class="glyphicon glyphicon-circle-arrow-right" title="Show next LLI"></span></div>
 				</form>
 			</div>
 			<div id="TableTab">
 				<form ng-show="storage.isSelected(6) && storage.activeTabs[5]">
-					<div style="float: left; margin-top:45px; margin-left:5%" ng-show="storage.index[5]>0" ng-click="storage.index[5]=storage.moveIndex(storage.index[5],-5,storage.tables.length)"><span style="font-size:1.8em;" class="glyphicon glyphicon-circle-arrow-left"></span></div>
+					<div style="float: left; margin-top:45px; margin-left:5%" ng-show="storage.index[5]>0" ng-click="storage.index[5]=storage.moveIndex(storage.index[5],-5,storage.tables.length)"><span style="font-size:1.8em;" class="glyphicon glyphicon-circle-arrow-left" title="Show previous LLI"></span></div>
 
 					<div style="float: left; margin-top:25px; margin-left:6%; width:10%; height: 70px; background-color:white; color:black" ng-show="storage.tables.length-storage.index[5]>=1" ng-click="expand.displayJSON(storage.tables[storage.index[5]+1])" data-toggle="collapse" data-target="#main-div">{{storage.tables[storage.index[5]+0]["dcterms:title"]["@value"]}}</div>
 
@@ -150,12 +149,12 @@
 
 					<div style="float: left; margin-top:25px; margin-left:6%; width:10%; height: 70px; background-color:white; color:black" ng-show="storage.tables.length-storage.index[5]>=5" ng-click="expand.displayJSON(storage.tables[storage.index[5]+4])" data-toggle="collapse" data-target="#main-div">{{storage.tables[storage.index[5]+4]["dcterms:title"]["@value"]}}</div>
 
-					<div style="float: right; margin-top:45px; margin-right:5%" ng-show="storage.index[5]+5<storage.tables.length" ng-click="storage.index[5]=storage.moveIndex(storage.index[5],5,storage.tables.length)"><span style="font-size:1.8em;" class="glyphicon glyphicon-circle-arrow-right"></span></div>
+					<div style="float: right; margin-top:45px; margin-right:5%" ng-show="storage.index[5]+5<storage.tables.length" ng-click="storage.index[5]=storage.moveIndex(storage.index[5],5,storage.tables.length)"><span style="font-size:1.8em;" class="glyphicon glyphicon-circle-arrow-right" title="Show next LLI"></span></div>
 				</form>
 			</div>
 			<div id="TextTab">
 				<form ng-show="storage.isSelected(7) && storage.activeTabs[6]">
-					<div style="float: left; margin-top:45px; margin-left:5%" ng-show="storage.index[6]>0" ng-click="storage.index[6]=storage.moveIndex(storage.index[6],-5,storage.texts.length)"><span style="font-size:1.8em;" class="glyphicon glyphicon-circle-arrow-left"></span></div>
+					<div style="float: left; margin-top:45px; margin-left:5%" ng-show="storage.index[6]>0" ng-click="storage.index[6]=storage.moveIndex(storage.index[6],-5,storage.texts.length)"><span style="font-size:1.8em;" class="glyphicon glyphicon-circle-arrow-left" title="Show previous LLI"></span></div>
 
 					<div style="float: left; margin-top:25px; margin-left:6%; width:10%; height: 70px; background-color:white; color:black" ng-show="storage.texts.length-storage.index[6]>=1" ng-click="expand.displayJSON(storage.texts[storage.index[6]+0])" data-toggle="collapse" data-target="#main-div">{{storage.texts[storage.index[6]+0]["dcterms:title"]["@value"]}}</div>
 
@@ -167,7 +166,7 @@
 
 					<div style="float: left; margin-top:25px; margin-left:6%; width:10%; height: 70px; background-color:white; color:black" ng-show="storage.texts.length-storage.index[6]>=1" ng-click="expand.displayJSON(storage.texts[storage.index[6]+0])" data-toggle="collapse" data-target="#main-div">{{storage.texts[storage.index[6]+4]["dcterms:title"]["@value"]}}</div>
 
-					<div style="float: right; margin-top:45px; margin-right:5%" ng-show="storage.index[6]+5<storage.texts.length" ng-click="storage.index[6]=storage.moveIndex(storage.index[6],5,storage.texts.length)"><span style="font-size:1.8em;" class="glyphicon glyphicon-circle-arrow-right"></span></div>
+					<div style="float: right; margin-top:45px; margin-right:5%" ng-show="storage.index[6]+5<storage.texts.length" ng-click="storage.index[6]=storage.moveIndex(storage.index[6],5,storage.texts.length)"><span style="font-size:1.8em;" class="glyphicon glyphicon-circle-arrow-right" title="Show next LLI"></span></div>
 				</form>
 			</div>
 		</div>
@@ -194,8 +193,8 @@
 	</form>
 -->
 </div>
-<div ng-controller="expandCtrl" class="container">
-	<table id="displayTable">
+<div ng-controller="expandCtrl" class="container" style="margin-top:10px">
+	<table id="displayTable" class="table table-bordered">
 	</table>
 </div>
 
