@@ -2,7 +2,7 @@
   "title": "llibrowser",
   "name": "llibrowser",
   "version": "0.1",
-  "description": "A basic add-on",
+  "description": "The Firefox Add-On that enables the easy search for learning materials based on the topic of the web page",
   "main": "index.js",
   "author": "J. Lubian, J. Polster, P. Shevchenko",
   "engines": {
@@ -11,7 +11,13 @@
   },
   "license": "MIT",
   "keywords": [
-    "jetpack"
+    "jetpack",
+    "lli",
+    "learning resources",
+    "ovgu",
+    "institut fuer intelligente kooperierende systeme",
+    "linked learning items",
+    "e-learning"
   ]
 }
 
