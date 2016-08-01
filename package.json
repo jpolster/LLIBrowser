@@ -1,7 +1,7 @@
 {
   "title": "llibrowser",
   "name": "llibrowser",
-  "version": "0.1",
+  "version": "1.0.0",
   "description": "The Firefox Add-On that enables the easy search for learning materials based on the topic of the web page",
   "main": "index.js",
   "author": "J. Lubian, J. Polster, P. Shevchenko",
