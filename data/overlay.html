@@ -14,7 +14,7 @@
 <body ng-controller="ServerCtrl as storage">
 
 
-	<div ng-show="storage.oldURL.search('resource%3A%2F%2Fllibrowser%2Fdata%2Fdummy.html') != -1" class="alert alert-danger" style="padding: 8px; margin-bottom: 0px">
+	<div ng-show="storage.oldURL.search('resource%3A%2F%2Fllibrowser%2Fdata%2Fdummy.html') != -1" class="alert alert-danger" style="padding: 8px; margin-bottom: 0px; border: solid">
 		<strong>Error!</strong> You cannot open LLIBrowser with a not valid page. Valid pages are http(s)://page.domain/other/. This is a demonstration of the work with an example page "dummy.html"
 	</div>
 
@@ -28,7 +28,7 @@
 			<strong>Success!</strong> Ready to reload the page with {{storage.newURL}}. Click "Reload"
 		</div>
 
-		<div ng-show="!storage.newURL" class="alert alert-warning" style="padding: 8px; margin-bottom: 0px; border:3px">
+		<div ng-show="!storage.newURL" class="alert alert-warning" style="padding: 8px; margin-bottom: 0px; border:solid">
 			<strong>Warning!</strong> Your address should start with "http://" or "https://" (E.g. http://www.example.com, https://www.example.com)
 		</div>
 	</form>
