@@ -15,12 +15,14 @@
 
 
 	<div ng-show="storage.oldURL.search('resource%3A%2F%2Fllibrowser%2Fdata%2Fdummy.html') != -1" class="alert alert-danger" style="padding: 8px; margin-bottom: 0px">
-		<strong>Error!</strong> You cannot open LLIBrowser with an empty page. This is a demonstration of the work with an example page "dummy.html"
+		<strong>Error!</strong> You cannot open LLIBrowser with a not valid page. Valid pages are http(s)://page.domain/other/. This is a demonstration of the work with an example page "dummy.html"
 	</div>
 
 	<form id="newPageForm" class="collapse" name="newPage" ng-submit="newPage.$valid && storage.setURL()" novalidate style="position:relative; clear:both; width:100%; background-color:#d9edf7; color:black;">
-		<input ng-model="storage.newURL" type="url" placeholder="Insert new link for LLIs" required style="width:90%"/>
-		<button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-refresh">&nbsp;Reload</span></button>
+		<input ng-model="storage.newURL" ng-pattern="storage.HTTP_REGEX" placeholder="Insert new link for LLIs" required style="width:90%"/>
+		<button type="submit" class="btn btn-default" title="reload" style="margin-right:1%; margin-top:5px">
+			<span class="glyphicon glyphicon-refresh"></span> Reload
+		</button>
 
 		<div ng-show="newPage.$valid" class="alert alert-success" style="padding: 8px; margin-bottom: 0px; border:solid">
 			<strong>Success!</strong> Ready to reload the page with {{storage.newURL}}. Click "Reload"

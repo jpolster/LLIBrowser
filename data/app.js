@@ -212,6 +212,7 @@ this.oldURL = encodeURIComponent(page);
            console.log("Connection with server failed");
        });
     };
+    this.HTTP_REGEX = /^(https?:\/\/)?([\w\.]+)\.([a-z]{2,6}\.?)(\/[\w\.]*)*\/?$/;
 }]);
 
 
